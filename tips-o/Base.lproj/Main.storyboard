@@ -85,7 +85,7 @@
                                     <action selector="saveTapped:" destination="Vdu-WH-Ma4" eventType="touchUpInside" id="JX3-X7-pE4"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74X-PQ-JrL">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="74X-PQ-JrL">
                                 <rect key="frame" x="30" y="170" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gvQ-Ph-V01"/>
@@ -93,7 +93,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXu-7g-10w">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bXu-7g-10w">
                                 <rect key="frame" x="30" y="230" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="52c-iC-mUI"/>
@@ -120,7 +120,7 @@
                                     <segue destination="pOj-qh-kSf" kind="show" id="LRy-ry-7FZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zhJ-Is-gKX">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zhJ-Is-gKX">
                                 <rect key="frame" x="30" y="290" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rlp-g8-fwj"/>
@@ -135,7 +135,7 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="from" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yA-Vd-GG0">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="from" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2yA-Vd-GG0">
                                 <rect key="frame" x="30" y="350" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3qY-2D-hhB"/>
@@ -315,7 +315,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dny-of-TAM"/>
-        <segue reference="sQf-4g-inH"/>
+        <segue reference="LRy-ry-7FZ"/>
+        <segue reference="h7Y-iw-div"/>
     </inferredMetricsTieBreakers>
 </document>
