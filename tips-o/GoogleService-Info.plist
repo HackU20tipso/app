@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>923729590080-ibf3o4rekdugi1dmt055a342jqq25kcq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.923729590080-ibf3o4rekdugi1dmt055a342jqq25kcq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAg6Qbjem-LUrmxWlWFhyc2jivvhEncCWQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>923729590080</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>maya.tips-o</string>
+	<key>PROJECT_ID</key>
+	<string>tips-hacku20ver2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tips-hacku20ver2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:923729590080:ios:2f836883a0975e5eee2ca5</string>
+	<key>DATABASE_URL</key>
+	<string>https://tips-hacku20ver2.firebaseio.com</string>
+</dict>
+</plist>
