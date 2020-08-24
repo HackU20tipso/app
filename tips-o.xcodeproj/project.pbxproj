@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030F9CB424F3FAB500F3BA8D /* question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030F9CB324F3FAB500F3BA8D /* question.storyboard */; };
+		030F9CB824F3FEA800F3BA8D /* answer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030F9CB724F3FEA800F3BA8D /* answer.storyboard */; };
 		6CB4308624F2CD2100A861C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4308524F2CD2100A861C0 /* AppDelegate.swift */; };
 		6CB4308824F2CD2100A861C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4308724F2CD2100A861C0 /* SceneDelegate.swift */; };
 		6CB4308A24F2CD2100A861C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4308924F2CD2100A861C0 /* ViewController.swift */; };
@@ -18,11 +20,12 @@
 		6CB430A024F2DC2E00A861C0 /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4309F24F2DC2E00A861C0 /* answerViewController.swift */; };
 		6CB430A224F2DCF100A861C0 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB430A124F2DCF100A861C0 /* questionViewController.swift */; };
 		6CF9BE5E24F38A1D006C1A4C /* account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF9BE5D24F38A1D006C1A4C /* account.storyboard */; };
-		6CF9BE6024F38B60006C1A4C /* new.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF9BE5F24F38B60006C1A4C /* new.storyboard */; };
 		ACA082BD3654C352071671E2 /* Pods_tips_o.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FF531918003E113E7EA8EE /* Pods_tips_o.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030F9CB324F3FAB500F3BA8D /* question.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = question.storyboard; sourceTree = "<group>"; };
+		030F9CB724F3FEA800F3BA8D /* answer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = answer.storyboard; sourceTree = "<group>"; };
 		2CF4849145811182C43AC7F5 /* Pods-tips-o.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tips-o.debug.xcconfig"; path = "Target Support Files/Pods-tips-o/Pods-tips-o.debug.xcconfig"; sourceTree = "<group>"; };
 		51FF531918003E113E7EA8EE /* Pods_tips_o.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tips_o.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB4308224F2CD2100A861C0 /* tips-o.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tips-o.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +41,6 @@
 		6CB4309F24F2DC2E00A861C0 /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
 		6CB430A124F2DCF100A861C0 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
 		6CF9BE5D24F38A1D006C1A4C /* account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = account.storyboard; sourceTree = "<group>"; };
-		6CF9BE5F24F38B60006C1A4C /* new.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = new.storyboard; sourceTree = "<group>"; };
 		9D57843E7EB9991E12993549 /* Pods-tips-o.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tips-o.release.xcconfig"; path = "Target Support Files/Pods-tips-o/Pods-tips-o.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +97,8 @@
 				6CB4309F24F2DC2E00A861C0 /* answerViewController.swift */,
 				6CB430A124F2DCF100A861C0 /* questionViewController.swift */,
 				6CF9BE5D24F38A1D006C1A4C /* account.storyboard */,
-				6CF9BE5F24F38B60006C1A4C /* new.storyboard */,
+				030F9CB724F3FEA800F3BA8D /* answer.storyboard */,
+				030F9CB324F3FAB500F3BA8D /* question.storyboard */,
 			);
 			path = "tips-o";
 			sourceTree = "<group>";
@@ -171,9 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CB4309224F2CD2400A861C0 /* LaunchScreen.storyboard in Resources */,
-				6CF9BE6024F38B60006C1A4C /* new.storyboard in Resources */,
+				030F9CB424F3FAB500F3BA8D /* question.storyboard in Resources */,
 				6CB4309C24F2CE5500A861C0 /* GoogleService-Info.plist in Resources */,
 				6CF9BE5E24F38A1D006C1A4C /* account.storyboard in Resources */,
+				030F9CB824F3FEA800F3BA8D /* answer.storyboard in Resources */,
 				6CB4308F24F2CD2400A861C0 /* Assets.xcassets in Resources */,
 				6CB4308D24F2CD2100A861C0 /* Main.storyboard in Resources */,
 			);
