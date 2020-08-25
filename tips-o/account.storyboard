@@ -39,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="nameOut:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="qIf-F2-eTZ"/>
+                                    <action selector="nameOut:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="8PY-J4-opM"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vor-Cx-5yH">
@@ -82,7 +82,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="ageEnd:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="BOc-Gh-P01"/>
+                                    <action selector="ageEnd:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="XdQ-5R-weR"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsY-GS-UxA">
@@ -109,7 +109,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="belongEnd:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="CZ2-5k-hoM"/>
+                                    <action selector="belongEnd:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="4sS-AS-nAh"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3er-kd-vD6">
@@ -136,7 +136,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="fromEnd:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="U3W-LA-W8h"/>
+                                    <action selector="fromEnd:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="zFK-Et-tVa"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-QX-XMw">
@@ -158,7 +158,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="saveTapped:" destination="bCf-QD-7Tb" eventType="touchUpInside" id="Gcj-BW-gVe"/>
+                                    <action selector="saveTapped:" destination="bCf-QD-7Tb" eventType="touchUpInside" id="exS-cR-X2x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -196,11 +196,11 @@
                     <tabBarItem key="tabBarItem" title="Item" id="h2o-Xg-pzd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="ageTextField" destination="TLT-jQ-9mh" id="kFd-ov-5Xh"/>
-                        <outlet property="belong" destination="hXs-E4-ych" id="U5b-Mp-ydy"/>
-                        <outlet property="from" destination="o1B-4L-Lnw" id="Uib-76-Dqa"/>
-                        <outlet property="nameTextField" destination="PJC-Oa-1xb" id="Xx7-eJ-YoI"/>
-                        <outlet property="quateLabel" destination="K0f-tv-6Xf" id="cD3-WK-eGc"/>
+                        <outlet property="ageTextField" destination="TLT-jQ-9mh" id="Rjo-Pd-siL"/>
+                        <outlet property="belong" destination="hXs-E4-ych" id="PNF-24-qfu"/>
+                        <outlet property="from" destination="o1B-4L-Lnw" id="gvs-oa-wEj"/>
+                        <outlet property="nameTextField" destination="PJC-Oa-1xb" id="k3b-b1-fne"/>
+                        <outlet property="quateLabel" destination="K0f-tv-6Xf" id="NkM-u8-E4p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfv-yK-qi2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
