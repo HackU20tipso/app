@@ -13,6 +13,7 @@ target 'tips-o' do
   # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
   pod 'FirebaseUI/Google'
+  pod 'Firebase/Auth'
   
 
 
