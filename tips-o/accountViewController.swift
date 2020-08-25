@@ -4,6 +4,9 @@ import Firebase
 import FirebaseCore
 import FirebaseFirestore
 import GoogleSignIn
+import FirebaseAnalytics
+
+
 
 class accountViewController: UIViewController {
     
@@ -13,12 +16,17 @@ class accountViewController: UIViewController {
     @IBOutlet weak var belong: UITextField!
     @IBOutlet weak var from: UITextField!
     
+    
+
     //var docRef: CollectionReference = db.collection("accountData")
     
     var docRef: DocumentReference!
     
     @IBAction func saveTapped(_ sender: Any) {
         guard let nameText = nameTextField.text, !nameText.isEmpty else {return}
+        
+        
+        
         guard let ageAuther = ageTextField.text, !ageAuther.isEmpty else {return}
         guard let belongAuther = belong.text, !belongAuther.isEmpty else {return}
         guard let fromAuther = from.text, !fromAuther.isEmpty else {return}
@@ -52,6 +60,7 @@ class accountViewController: UIViewController {
         guard let themeAuther = themeTextField.text, !themeAuther.isEmpty else {return}
         guard let targetAuther = targetTextField.text, !targetAuther.isEmpty else {return}
         
+        
         let DataToSave2 : [String: Any] = ["url" : urlAuther , "theme" : themeAuther, "target" : targetAuther]
         
         docRef2.setData(DataToSave2){ (error) in
@@ -73,9 +82,11 @@ class accountViewController: UIViewController {
     
     //var user = firebase.auth().currentUser;
     
+    //let usrid : Void = Analytics.setUserID("あああ")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        docRef = Firestore.firestore().collection("AccountData").document("profile")
+        docRef = Firestore.firestore().collection("AccountData").document()
         docRef2 = Firestore.firestore().collection("QuestionnareData").document("question")
            // Do any additional setup after loading the view.
     }
