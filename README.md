@@ -1,3 +1,13 @@
+
+## addする時
+
+1. git add -p 追加するファイル
+2. y/nを判断して答える
+
+## git switch masterできない時
+
+1. git stashする(?)
+
 ## storyboardを追加する時
 
 1. 自分のブランチでstoryboard追加
