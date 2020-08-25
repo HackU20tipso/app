@@ -10,7 +10,7 @@
         <!--Item-->
         <scene sceneID="3P2-Lu-fZI">
             <objects>
-                <viewController id="xPN-mO-lNo" customClass="accountViewController" customModule="tips_o" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xPN-mO-lNo" customClass="loginViewController" customModule="tips_o" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VoX-SM-8Kd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
