@@ -3,6 +3,7 @@ import UIKit
 import Firebase
 import FirebaseCore
 import FirebaseFirestore
+import GoogleSignIn
 
 class accountViewController: UIViewController {
     
@@ -75,7 +76,7 @@ class accountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         docRef = Firestore.firestore().collection("AccountData").document("profile")
-        docRef2 = Firestore.firestore().collection("AccountData").document("question")
+        docRef2 = Firestore.firestore().collection("QuestionnareData").document("question")
            // Do any additional setup after loading the view.
     }
     
