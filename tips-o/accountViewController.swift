@@ -1,18 +1,4 @@
-//
-//  accountViewController.swift
-//  tips-o
-//
-//  Created by 百塚真弥 on 2020/08/24.
-//  Copyright © 2020 百塚真弥. All rights reserved.
-//
 
-//
-//  sampleViewController.swift
-//  soturon
-//
-//  Created by 百塚真弥 on 2020/08/21.
-//  Copyright © 2020 百塚真弥. All rights reserved.
-//
 import UIKit
 import Firebase
 import FirebaseCore
@@ -50,6 +36,25 @@ class accountViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var quesLabel: UILabel!
+    @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var themeTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var targetTextField: UITextField!
+    
+    @IBAction func saveTapped2(_ sender: Any) {
+        
+        guard let quesText = quesLabel.text, !quesText.isEmpty else {return}
+        guard let urlAuther = urlTextField.text, !urlAuther.isEmpty else {return}
+        guard let themeAuther = themeTextField.text, !themeAuther.isEmpty else {return}
+        guard let targetAuther = targetTextField.text, !targetAuther.isEmpty else {return}
+        
+        // Add a second document with a generated ID.
+       
+        
+        //docRef.document("profile").setData(DataToSave)
+    
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
