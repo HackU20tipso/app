@@ -42,12 +42,26 @@ class accountViewController: UIViewController {
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var targetTextField: UITextField!
     
+    var docRef2: DocumentReference!
+    
     @IBAction func saveTapped2(_ sender: Any) {
         
         guard let quesText = quesLabel.text, !quesText.isEmpty else {return}
         guard let urlAuther = urlTextField.text, !urlAuther.isEmpty else {return}
         guard let themeAuther = themeTextField.text, !themeAuther.isEmpty else {return}
         guard let targetAuther = targetTextField.text, !targetAuther.isEmpty else {return}
+        
+        let DataToSave2 : [String: Any] = ["url" : urlAuther , "theme" : themeAuther, "target" : targetAuther]
+        
+        docRef2.setData(DataToSave2){ (error) in
+            if let error = error{
+                print("get on an error : \(error.localizedDescription)")
+            }
+            else{
+                print("data has been saved!")
+            }
+        }
+               
         
         // Add a second document with a generated ID.
        
@@ -56,9 +70,12 @@ class accountViewController: UIViewController {
     
     }
     
+    //var user = firebase.auth().currentUser;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        docRef = Firestore.firestore().collection("accountData").document("profile")
+        docRef = Firestore.firestore().collection("AccountData").document("profile")
+        docRef2 = Firestore.firestore().collection("AccountData").document("question")
            // Do any additional setup after loading the view.
     }
     
