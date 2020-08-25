@@ -8,7 +8,19 @@ import FirebaseAnalytics
 
 
 
-class accountViewController: UIViewController {
+class accountViewController: UIViewController,UIPickerViewDataSource , UIPickerViewDelegate  {
+    
+    var pickerView: UIPickerView = UIPickerView()
+    let list = ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    
     
     @IBOutlet weak var quateLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -84,15 +96,42 @@ class accountViewController: UIViewController {
     
     //let usrid : Void = Analytics.setUserID("あああ")
     
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         docRef = Firestore.firestore().collection("AccountData").document()
         docRef2 = Firestore.firestore().collection("QuestionnareData").document("question")
            // Do any additional setup after loading the view.
+        
     }
     
     
-   
+    
+    @IBAction func nameOut(_ sender: Any) {
+    }
+    
+    @IBAction func ageEnd(_ sender: Any) {
+    }
+    
+    @IBAction func belongEnd(_ sender: Any) {
+    }
+    
+    @IBAction func fromEnd(_ sender: Any) {
+    }
+    
+    @IBAction func qEnd(_ sender: Any) {
+    }
+    
+    @IBAction func themeEnd(_ sender: Any) {
+    }
+    
+    @IBAction func targetEnd(_ sender: Any) {
+    }
+    
+    @IBAction func End(_ sender: Any) {
+    }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
