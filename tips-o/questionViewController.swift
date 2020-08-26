@@ -13,12 +13,6 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     
     @IBOutlet weak var quesLabel: UILabel!
     @IBOutlet weak var urlTextField: UITextField!
-    @IBOutlet weak var themeTextField: UITextField!
-    @IBOutlet weak var typeTextField: UITextField!
-    
-    
-    @IBOutlet weak var targetTextField: UITextField!
-    
     @IBOutlet weak var typepick: UIPickerView!
     
     @IBOutlet weak var targetpick: UIPickerView!
@@ -41,10 +35,17 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
            return twoDimArray[pickerView.tag][row]
        }
+    
+    var category : String!
+    var gender : String!
+    var age : String!
 
        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
            selectedPerson[pickerView.tag] = twoDimArray[pickerView.tag][row]
            var labelText = ""
+        var category : String = selectedPerson[0]
+        var gender : String = selectedPerson[1]
+        var age : String = selectedPerson[2]
            for i in selectedPerson{
                labelText += "\(i)  "
            }
@@ -127,14 +128,17 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         
         guard let quesText = quesLabel.text, !quesText.isEmpty else {return}
         guard let urlAuther = urlTextField.text, !urlAuther.isEmpty else {return}
-        guard let themeAuther = themeTextField.text, !themeAuther.isEmpty else {return}
-        guard let targetAuther =
         /*targetpick.textInputContextIdentifier,
         !targetAuther.isEmpty else{return}*/
-        targetTextField.text, !targetAuther.isEmpty else {return}
+
+        guard let targetcategory = category, !targetcategory.isEmpty else {return}
+        guard let targetgender = gender, !targetgender.isEmpty else {return}
+        guard let targetage = age, !targetage.isEmpty else {return}
         
-        
-        let DataToSave2 : [String: Any] = ["url" : urlAuther , "theme" : themeAuther, "target" : targetAuther]
+        /*
+        let DataToSave2 : [String: Any] = ["url" : urlAuther ,"target_age" : targetage, "target_category" : targetcategory, "target_gender" : targetgender ]
+ */
+        let DataToSave2 : [String: Any] = ["url" : urlAuther]
         
         docRef2.setData(DataToSave2){ (error) in
             if let error = error{
@@ -161,6 +165,8 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        docRef2 = Firestore.firestore().collection("QuestionnareData").document()
       
         for _ in 0 ... 2{
             twoDimArray.append([])
@@ -183,7 +189,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         typepick.delegate = self
         typepick.dataSource = self
         
-        docRef2 = Firestore.firestore().collection("QuestionnareData").document("question")
+        
            // Do any additional setup after loading the view.
         
     }
