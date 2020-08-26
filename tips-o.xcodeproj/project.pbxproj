@@ -24,6 +24,7 @@
 		ACA082BD3654C352071671E2 /* Pods_tips_o.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FF531918003E113E7EA8EE /* Pods_tips_o.framework */; };
 		C9DB20F924F57BB000177BA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9DB20F824F57BB000177BA9 /* GoogleService-Info.plist */; };
 		C9DB20FB24F69B0300177BA9 /* WebListTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DB20FA24F69B0300177BA9 /* WebListTableTableViewController.swift */; };
+		C9DB20FD24F6B26A00177BA9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DB20FC24F6B26A00177BA9 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		9D57843E7EB9991E12993549 /* Pods-tips-o.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tips-o.release.xcconfig"; path = "Target Support Files/Pods-tips-o/Pods-tips-o.release.xcconfig"; sourceTree = "<group>"; };
 		C9DB20F824F57BB000177BA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9DB20FA24F69B0300177BA9 /* WebListTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebListTableTableViewController.swift; sourceTree = "<group>"; };
+		C9DB20FC24F6B26A00177BA9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DB20FD24F6B26A00177BA9 /* WebKit.framework in Frameworks */,
 				ACA082BD3654C352071671E2 /* Pods_tips_o.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +68,7 @@
 		1ADCC6A5619CD3E27ACCD3E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9DB20FC24F6B26A00177BA9 /* WebKit.framework */,
 				51FF531918003E113E7EA8EE /* Pods_tips_o.framework */,
 			);
 			name = Frameworks;
