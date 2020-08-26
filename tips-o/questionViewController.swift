@@ -19,10 +19,59 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     
     @IBOutlet weak var targetTextField: UITextField!
     
+    @IBOutlet weak var typepick: UIPickerView!
     
     @IBOutlet weak var targetpick: UIPickerView!
     @IBOutlet weak var themepick: UIPickerView!
-    let compos = [["10代","20代","30代","40代","それ以上"],["女性","男性","どちらでもない"]]
+    
+    var twoDimArray = [[String]]()
+       var selectedPerson = [String]()
+       
+      
+
+       
+       func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           return 1
+       }
+
+       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+           return twoDimArray[pickerView.tag].count
+       }
+       
+       func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+           return twoDimArray[pickerView.tag][row]
+       }
+
+       func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+           selectedPerson[pickerView.tag] = twoDimArray[pickerView.tag][row]
+           var labelText = ""
+           for i in selectedPerson{
+               labelText += "\(i)  "
+           }
+           print(labelText)
+           
+           
+           
+           
+          /* let item = compos[component][row]
+           
+           print("\(item)が選ばれた")
+           
+           let row1 = pickerView.selectedRow(inComponent: 0)
+           let row2 = pickerView.selectedRow(inComponent: 1)
+           
+           let st = (row1,row2)
+           
+           print("現在選択されている行番号\(st)")
+           
+           let item1 = self.pickerView(pickerView, titleForRow: row1, forComponent: 0)
+           let item2 = self.pickerView(pickerView, titleForRow: row2, forComponent: 1)
+           
+           let st2 = (item1!,item2!)
+           
+           print("現在選択されている項目名\(st2)")*/
+       }
+   /* let compos = [["10代","20代","30代","40代","それ以上"],["女性","男性","どちらでもない"]]
     
     let compos2 = [["心理系","情報系","食物系","生物系"]]
     
@@ -71,7 +120,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         
         print("現在選択されている項目名\(st2)")
         
-    }
+    }*/
     var docRef2: DocumentReference!
     
     @IBAction func saveTapped2(_ sender: Any) {
@@ -113,8 +162,27 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        for _ in 0 ... 2{
+            twoDimArray.append([])
+        }
+        
+        themepick.tag=0
+        typepick.tag=1
+        targetpick.tag=2
+        
+        twoDimArray[0] = ["心理系","情報系","食物系"]
+        twoDimArray[1] = ["女性","男性","どちらでもない"]
+        twoDimArray[2] = ["10代","20代","30代","40代","それ以上"]
+        
+        selectedPerson = ["井上","鈴木","遠藤"]
+        
         targetpick.delegate = self
         targetpick.dataSource = self
+        themepick.delegate = self
+        themepick.dataSource = self
+        typepick.delegate = self
+        typepick.dataSource = self
+        
         docRef2 = Firestore.firestore().collection("QuestionnareData").document("question")
            // Do any additional setup after loading the view.
         
