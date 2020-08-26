@@ -15,7 +15,8 @@ import WebKit
 
 
 class answerViewController: UIViewController {
-
+    
+    
     @IBOutlet var webView: WKWebView!
     
     // シーン移動の際に設定されるWebデータ
@@ -23,31 +24,35 @@ class answerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         
+        
         // dataが設定されていればwebDataに代入する
         guard let webData = data else {
             return
         }
+       
+        
         // Do any additional setup after loading the view.
-  // 表示するWebページのURLRequestを作る
-  let myURL = URL(string: webData.url)
-  let myRequest = URLRequest(url: myURL!)
-  // Webを読み込む
-  webView.load(myRequest)
+        // 表示するWebページのURLRequestを作る
+        let myURL = URL(string: webData.url)
+        let myRequest = URLRequest(url: myURL!)
+        print(myRequest)
+        // Webを読み込む
+        webView.load(myRequest)
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-
-
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    
+    
 }
