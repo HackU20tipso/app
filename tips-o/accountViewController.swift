@@ -9,8 +9,6 @@ import FirebaseAnalytics
 
 
 class accountViewController: UIViewController{
-
-    
     
     @IBOutlet weak var quateLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -23,17 +21,12 @@ class accountViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    
-
     //var docRef: CollectionReference = db.collection("accountData")
     
     var docRef: DocumentReference!
     
     @IBAction func saveTapped(_ sender: Any) {
         guard let nameText = nameTextField.text, !nameText.isEmpty else {return}
-        
-        
-        
         guard let ageAuther = ageTextField.text, !ageAuther.isEmpty else {return}
         guard let belongAuther = belong.text, !belongAuther.isEmpty else {return}
         guard let fromAuther = from.text, !fromAuther.isEmpty else {return}
@@ -53,12 +46,25 @@ class accountViewController: UIViewController{
     }
 
     
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         docRef = Firestore.firestore().collection("AccountData").document()
         
+        Firestore.firestore().collection("AccountData").document("EcAJ8QLDwFvCg5tPPK4w").getDocument { (snap, error) in
+            if let error = error {
+                fatalError("\(error)")
+            }
+            guard let data = snap?.data() else { return }
+            print(data)
+            self.label.text = "\(data)"
+            
+        }
         
     }
+    
+    
     
     
     
