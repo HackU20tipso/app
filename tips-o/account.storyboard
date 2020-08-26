@@ -161,6 +161,16 @@
                                     <action selector="saveTapped:" destination="bCf-QD-7Tb" eventType="touchUpInside" id="exS-cR-X2x"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkS-j1-roP">
+                                <rect key="frame" x="10" y="474" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ZHg-L4-wFa"/>
+                                    <constraint firstAttribute="height" constant="50" id="rqK-do-WCS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -170,6 +180,7 @@
                             <constraint firstItem="zCY-Ou-2PA" firstAttribute="top" secondItem="vor-Cx-5yH" secondAttribute="bottom" constant="10" id="88R-BC-k8k"/>
                             <constraint firstItem="FjW-QX-XMw" firstAttribute="top" secondItem="o1B-4L-Lnw" secondAttribute="bottom" constant="30" id="8ks-gO-qei"/>
                             <constraint firstItem="xsY-GS-UxA" firstAttribute="top" secondItem="zCY-Ou-2PA" secondAttribute="bottom" constant="10" id="CF5-yq-cMT"/>
+                            <constraint firstItem="wkS-j1-roP" firstAttribute="top" secondItem="o1B-4L-Lnw" secondAttribute="bottom" constant="30" id="Cox-N9-fk5"/>
                             <constraint firstItem="K0f-tv-6Xf" firstAttribute="leading" secondItem="u4g-8Z-mEe" secondAttribute="leading" id="H6r-Y0-Hbh"/>
                             <constraint firstItem="PJC-Oa-1xb" firstAttribute="top" secondItem="K0f-tv-6Xf" secondAttribute="bottom" constant="20" id="L5D-6h-DF3"/>
                             <constraint firstItem="u4g-8Z-mEe" firstAttribute="trailing" secondItem="K0f-tv-6Xf" secondAttribute="trailing" id="LIy-4Z-HEe"/>
@@ -186,6 +197,7 @@
                             <constraint firstItem="3er-kd-vD6" firstAttribute="leading" secondItem="u4g-8Z-mEe" secondAttribute="leading" constant="10" id="s2c-1G-ON8"/>
                             <constraint firstItem="u4g-8Z-mEe" firstAttribute="trailing" secondItem="PJC-Oa-1xb" secondAttribute="trailing" constant="10" id="si9-af-aRR"/>
                             <constraint firstItem="zCY-Ou-2PA" firstAttribute="leading" secondItem="u4g-8Z-mEe" secondAttribute="leading" constant="10" id="stz-Qf-D3c"/>
+                            <constraint firstItem="wkS-j1-roP" firstAttribute="leading" secondItem="u4g-8Z-mEe" secondAttribute="leading" constant="10" id="tmr-Dc-Bon"/>
                             <constraint firstItem="hXs-E4-ych" firstAttribute="top" secondItem="TLT-jQ-9mh" secondAttribute="bottom" constant="10" id="ub7-QR-aY2"/>
                             <constraint firstItem="PJC-Oa-1xb" firstAttribute="leading" secondItem="vor-Cx-5yH" secondAttribute="trailing" constant="5" id="xrr-yB-gRi"/>
                             <constraint firstItem="u4g-8Z-mEe" firstAttribute="trailing" secondItem="hXs-E4-ych" secondAttribute="trailing" constant="10" id="yqk-Bj-2xo"/>
@@ -199,6 +211,7 @@
                         <outlet property="ageTextField" destination="TLT-jQ-9mh" id="Rjo-Pd-siL"/>
                         <outlet property="belong" destination="hXs-E4-ych" id="PNF-24-qfu"/>
                         <outlet property="from" destination="o1B-4L-Lnw" id="gvs-oa-wEj"/>
+                        <outlet property="label" destination="wkS-j1-roP" id="ibi-9T-p0P"/>
                         <outlet property="nameTextField" destination="PJC-Oa-1xb" id="k3b-b1-fne"/>
                         <outlet property="quateLabel" destination="K0f-tv-6Xf" id="NkM-u8-E4p"/>
                     </connections>
