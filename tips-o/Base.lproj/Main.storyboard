@@ -57,7 +57,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="アカウント登録はこちら"/>
                                 <connections>
-                                    <segue destination="Ht7-bf-r07" kind="show" id="iwZ-Ad-oxX"/>
+                                    <segue destination="jnS-GE-7j1" kind="presentation" id="vO7-ZT-XSX"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="650-WU-BGq">
@@ -89,21 +89,13 @@
             </objects>
             <point key="canvasLocation" x="-571" y="78"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="BU3-ke-J7G">
+        <!--account-->
+        <scene sceneID="oTT-5F-mdm">
             <objects>
-                <viewController id="Ht7-bf-r07" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xUO-Lj-TDB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="73v-tT-G2O"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ga9-AQ-Ota"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WYI-LT-JfZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="account" id="jnS-GE-7j1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCb-Bb-6xi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-558" y="787"/>
+            <point key="canvasLocation" x="-570" y="538"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zku-4p-Ne3">
