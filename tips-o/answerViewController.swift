@@ -10,13 +10,31 @@ import UIKit
 import Firebase
 import FirebaseCore
 import FirebaseFirestore
+import WebKit
+
+
 
 class answerViewController: UIViewController {
 
+    @IBOutlet var webView: WKWebView!
+    
+    // シーン移動の際に設定されるWebデータ
+    var data:(name:String, url:String)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // dataが設定されていればwebDataに代入する
+        guard let webData = data else {
+            return
+        }
         // Do any additional setup after loading the view.
+  // 表示するWebページのURLRequestを作る
+  let myURL = URL(string: webData.url)
+  let myRequest = URLRequest(url: myURL!)
+  // Webを読み込む
+  webView.load(myRequest)
+        
     }
     
 
@@ -29,5 +47,7 @@ class answerViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
 
 }
