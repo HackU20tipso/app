@@ -22,7 +22,7 @@
                     <navigationItem key="navigationItem" id="2qO-Cm-brU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="webView" destination="QwU-PQ-vJ7" id="deb-lb-hg9"/>
+                        <outlet property="webView" destination="QwU-PQ-vJ7" id="vBC-Wi-rfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4F-2j-JyX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -62,7 +62,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="4uY-C9-sds" kind="show" id="oNe-2f-5jL"/>
+                                    <segue destination="4uY-C9-sds" kind="show" identifier="showWebPage" id="oNe-2f-5jL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
