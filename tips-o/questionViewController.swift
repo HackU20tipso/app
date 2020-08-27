@@ -141,10 +141,10 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
                 print("get on an error : \(error.localizedDescription)")
             }
             else{
-                print("data has been saved!")
+                print("888888888data has been saved!")
             }
         }
-        
+        print("バナナ")
         docRef_category.setData(DataToSave_category){ (error) in
             if let error = error{
                 print("get on an error : \(error.localizedDescription)")
@@ -163,6 +163,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //pickerの設定
         for _ in 0 ... 2{
@@ -189,26 +190,91 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         // Do any additional setup after loading the view.
         
         //firestoreの設定
+       
         docRef2 = Firestore.firestore().collection("QuestionnareData").document()
         
-        var gender_string: String! = "どちらでもない"
         
-        for i in 0 ... 2 {
-            if(twoDimArray[1][i] == gender){
+        
+        //var gender_string: String! = "どちらでもない"
+        
+        /*
+        if(gender == "女性"){
+            gender_string = "女性"
+        }
+        else if(gender == "男性"){
+            gender_string = "男性"
+        }
+        else{
+            gender_string = "どちらでもない"
+        }
+ */
+        
+        /*for i in 0 ... 2 {
+            if(twoDimArray[1][i] == twoDimArray[1][i]){
                 gender_string = twoDimArray[1][i]
+            }
+        }*/
+        
+        //var category_string: String! = "そんなバナナです"
+        
+        if(category == "情報系"){
+            if(gender == "女性"){
+                docRef_category = Firestore.firestore().collection("情報系").document()
+            }
+            else if(gender == "男性"){
+                docRef_category = Firestore.firestore().collection("情報系").document("男性")
+            }
+            else{
+                docRef_category = Firestore.firestore().collection("情報系").document("どちらでもない")
+            }
+        }
+        else if(category == "心理系"){
+            if(gender == "女性"){
+                docRef_category = Firestore.firestore().collection("情報系").document("女性")
+            }
+            else if(gender == "男性"){
+                docRef_category = Firestore.firestore().collection("情報系").document("男性")
+            }
+            else{
+                docRef_category = Firestore.firestore().collection("情報系").document("どちらでもない")
+            }
+        }
+        else if(category == "生活系"){
+            if(gender == "女性"){
+                docRef_category = Firestore.firestore().collection("生活系").document("女性")
+            }
+            else if(gender == "男性"){
+                docRef_category = Firestore.firestore().collection("生活系").document("男性")
+            }
+            else{
+                docRef_category = Firestore.firestore().collection("生活系").document("どちらでもない")
+            }
+        }
+        else{
+            if(gender == "女性"){
+                docRef_category = Firestore.firestore().collection("その他").document("女性")
+            }
+            else if(gender == "男性"){
+                docRef_category = Firestore.firestore().collection("その他").document("男性")
+            }
+            else{
+                docRef_category = Firestore.firestore().collection("その他").document("どちらでもない")
             }
         }
         
-        var category_string: String! = "その他"
         
-        for i in 0 ... 3 {
-            if(twoDimArray[0][i] == gender){
+      /*  for i in 0 ... 3 {
+            if(twoDimArray[0][i] == category){
                 category_string = twoDimArray[0][i]
                 //category_string = "そんなバナナ"
             }
         }
+        */
         
+        /*
         docRef_category = Firestore.firestore().collection(category_string).document(gender_string)
+        */
+        
         
     }
     

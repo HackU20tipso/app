@@ -24,6 +24,7 @@ class accountViewController: UIViewController{
     //var docRef: CollectionReference = db.collection("accountData")
     
     var docRef: DocumentReference!
+    var docRef3: DocumentReference!
     
     @IBAction func saveTapped(_ sender: Any) {
         guard let nameText = nameTextField.text, !nameText.isEmpty else {return}
@@ -43,6 +44,14 @@ class accountViewController: UIViewController{
                 print("data has been saved!")
             }
         }
+        docRef3.setData(DataToSave){ (error) in
+            if let error = error{
+                print("get on an error : \(error.localizedDescription)")
+            }
+            else{
+                print("data has been saved!")
+            }
+        }
     }
 
     
@@ -51,6 +60,10 @@ class accountViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         docRef = Firestore.firestore().collection("AccountData").document()
+        print("バナナ")
+        docRef3 = Firestore.firestore().collection("バナナ").document("バナナ")
+
+        
         
         Firestore.firestore().collection("AccountData").document("EcAJ8QLDwFvCg5tPPK4w").getDocument { (snap, error) in
             if let error = error {
