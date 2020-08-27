@@ -28,7 +28,5 @@ class AccountData {
         self.from = from
         self.gender = name
         self.name = name
-
     }
-
 }
