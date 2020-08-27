@@ -1,4 +1,4 @@
-import Foundation
+/*import Foundation
 import Firebase
 import FirebaseCore
 import FirebaseFirestore
@@ -25,4 +25,4 @@ class QuestionnareData {
 ​
     }
 ​
-}
+}*/

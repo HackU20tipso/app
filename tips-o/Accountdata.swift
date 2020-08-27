@@ -6,6 +6,8 @@ import GoogleSignIn
 import FirebaseAnalytics
 
 class AccountData {
+    
+   // let data = "a"
 
     /*
     var ref = Database.database().reference()
