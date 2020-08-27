@@ -114,7 +114,7 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
             }
             guard let data = snap?.data() else { return }
             print(data)
-            self.label.text = "\(data)"
+            //self.label.text = "\(data)"
             
         }
         

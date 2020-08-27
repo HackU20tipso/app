@@ -5,7 +5,23 @@ import FirebaseFirestore
 import GoogleSignIn
 import FirebaseAnalytics
 
-class AccountData {
+class AppUser {
+    
+    var userPoint: Int?
+    
+    init(data: [String: Any]){
+        userPoint = data["userPoint"] as? Int
+    }
+    
+    func Add_point(){
+        if let x = userPoint{
+            userPoint! = 1 + x
+            print("ば７\(userPoint!)\(x)")
+        }
+        else{
+            print("ポイントを更新できませんでした")
+        }
+    }
     
    // let data = "a"
 
