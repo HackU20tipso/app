@@ -7,7 +7,9 @@ import FirebaseAnalytics
 
 class AccountData {
 
+    /*
     var ref = Database.database().reference()
+    //var ref = Firestore.firestore().reference()
     var age: Int?
     var belong: String?
     var from: String?
@@ -29,4 +31,5 @@ class AccountData {
         self.gender = name
         self.name = name
     }
+ */
 }

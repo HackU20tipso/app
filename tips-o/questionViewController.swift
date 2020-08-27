@@ -136,6 +136,53 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         
         let DataToSave_category : [String: Any] = ["url" : urlAuther ,"target_age" : targetage]
         
+        if(category == "情報系"){
+            if(gender == "女性"){
+                docRef_category = Firestore.firestore().collection("情報系").document("女性")
+            }
+            else if(gender == "男性"){
+                docRef_category = Firestore.firestore().collection("情報系").document("男性")
+            }
+            else{
+                docRef_category = Firestore.firestore().collection("情報系").document("どちらでもない")
+            }
+        }
+        else if(category == "心理系"){
+            if(gender == "女性"){
+                docRef_category = Firestore.firestore().collection("情報系").document("女性")
+            }
+            else if(gender == "男性"){
+                docRef_category = Firestore.firestore().collection("情報系").document("男性")
+            }
+            else{
+                docRef_category = Firestore.firestore().collection("情報系").document("どちらでもない")
+            }
+        }
+        else if(category == "生活系"){
+            if(gender == "女性"){
+                docRef_category = Firestore.firestore().collection("生活系").document("女性")
+            }
+            else if(gender == "男性"){
+                docRef_category = Firestore.firestore().collection("生活系").document("男性")
+            }
+            else{
+                docRef_category = Firestore.firestore().collection("生活系").document("どちらでもない")
+            }
+        }
+        else{
+            if(gender == "女性"){
+                docRef_category = Firestore.firestore().collection("その他").document("女性")
+            }
+            else if(gender == "男性"){
+                docRef_category = Firestore.firestore().collection("その他").document("男性")
+            }
+            else{
+                docRef_category = Firestore.firestore().collection("その他").document("どちらでもない")
+            }
+        }
+        
+        
+        
         docRef2.setData(DataToSave2){ (error) in
             if let error = error{
                 print("get on an error : \(error.localizedDescription)")
@@ -216,51 +263,6 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         }*/
         
         //var category_string: String! = "そんなバナナです"
-        
-        if(category == "情報系"){
-            if(gender == "女性"){
-                docRef_category = Firestore.firestore().collection("情報系").document()
-            }
-            else if(gender == "男性"){
-                docRef_category = Firestore.firestore().collection("情報系").document("男性")
-            }
-            else{
-                docRef_category = Firestore.firestore().collection("情報系").document("どちらでもない")
-            }
-        }
-        else if(category == "心理系"){
-            if(gender == "女性"){
-                docRef_category = Firestore.firestore().collection("情報系").document("女性")
-            }
-            else if(gender == "男性"){
-                docRef_category = Firestore.firestore().collection("情報系").document("男性")
-            }
-            else{
-                docRef_category = Firestore.firestore().collection("情報系").document("どちらでもない")
-            }
-        }
-        else if(category == "生活系"){
-            if(gender == "女性"){
-                docRef_category = Firestore.firestore().collection("生活系").document("女性")
-            }
-            else if(gender == "男性"){
-                docRef_category = Firestore.firestore().collection("生活系").document("男性")
-            }
-            else{
-                docRef_category = Firestore.firestore().collection("生活系").document("どちらでもない")
-            }
-        }
-        else{
-            if(gender == "女性"){
-                docRef_category = Firestore.firestore().collection("その他").document("女性")
-            }
-            else if(gender == "男性"){
-                docRef_category = Firestore.firestore().collection("その他").document("男性")
-            }
-            else{
-                docRef_category = Firestore.firestore().collection("その他").document("どちらでもない")
-            }
-        }
         
         
       /*  for i in 0 ... 3 {
