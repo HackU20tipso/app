@@ -25,7 +25,7 @@ class answerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          
-        
+        let da = "ab"
         // dataが設定されていればwebDataに代入する
         guard let webData = data else {
             return
