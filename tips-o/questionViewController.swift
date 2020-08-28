@@ -6,8 +6,25 @@ import FirebaseFirestore
 import GoogleSignIn
 import FirebaseAnalytics
 
+
 class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource  {
     
+    
+    
+    //ユーザーの名前/パスワード
+    //fromAppDelegate.ThisUsername
+    //fromAppDelegate.Thispassword
+    let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let me = AppUser()
+    
+    
+    
+    
+    
+    
+    @IBOutlet weak var sendMessege: UILabel!
+    
+    @IBOutlet weak var theme: UITextField!
     
     @IBOutlet weak var quesLabel: UILabel!
     @IBOutlet weak var urlTextField: UITextField!
@@ -18,7 +35,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     
     var twoDimArray = [[String]]()
     var selectedPerson = [String]()
-    
+    var mydata : Int = 0
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -208,18 +225,41 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     
     //let db = Firestore.firestore()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        db.collection("AccountData").whereField("name", isEqualTo:fromAppDelegate.ThisUsername ).whereField("password", isEqualTo: fromAppDelegate.Thispassword)
+            .getDocuments() {(querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    var isEmpty : String = ""
+                    for document in querySnapshot!.documents {
+                        print("代入するよ")
+                        self.mydata = document.get("point") as! Int
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                }
+        }
+         
+        print("取れたかな?")
+        print("\(self.mydata)")
+        
+        print("ここです！！！！！")
+        print(self.fromAppDelegate.ThisUsername)
+        //fromAppDelegate.Thispassword = "うふ"
+        print(self.fromAppDelegate.Thispassword)
         
         //pickerの設定
         for _ in 0 ... 2{
-            twoDimArray.append([])
+            self.twoDimArray.append([])
         }
         
-        themepick.tag = 0
-        typepick.tag = 1
-        targetpick.tag = 2
+        self.themepick.tag = 0
+        self.typepick.tag = 1
+        self.targetpick.tag = 2
         
         twoDimArray[0] = ["心理系","情報系","食物系","その他"]
         twoDimArray[1] = ["女性","男性","どちらでもない"]
@@ -237,7 +277,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         // Do any additional setup after loading the view.
         
         //firestoreの設定
-       
+        
         docRef2 = Firestore.firestore().collection("QuestionnareData").document()
         
         
@@ -245,43 +285,45 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         //var gender_string: String! = "どちらでもない"
         
         /*
-        if(gender == "女性"){
-            gender_string = "女性"
-        }
-        else if(gender == "男性"){
-            gender_string = "男性"
-        }
-        else{
-            gender_string = "どちらでもない"
-        }
- */
+         if(gender == "女性"){
+         gender_string = "女性"
+         }
+         else if(gender == "男性"){
+         gender_string = "男性"
+         }
+         else{
+         gender_string = "どちらでもない"
+         }
+         */
         
         /*for i in 0 ... 2 {
-            if(twoDimArray[1][i] == twoDimArray[1][i]){
-                gender_string = twoDimArray[1][i]
-            }
-        }*/
+         if(twoDimArray[1][i] == twoDimArray[1][i]){
+         gender_string = twoDimArray[1][i]
+         }
+         }*/
         
         //var category_string: String! = "そんなバナナです"
         
         
-      /*  for i in 0 ... 3 {
-            if(twoDimArray[0][i] == category){
-                category_string = twoDimArray[0][i]
-                //category_string = "そんなバナナ"
-            }
-        }
-        */
+        /*  for i in 0 ... 3 {
+         if(twoDimArray[0][i] == category){
+         category_string = twoDimArray[0][i]
+         //category_string = "そんなバナナ"
+         }
+         }
+         */
         
         /*
-        docRef_category = Firestore.firestore().collection(category_string).document(gender_string)
-        */
+         docRef_category = Firestore.firestore().collection(category_string).document(gender_string)
+         */
         
         
     }
     
     //キーボードしまう
     @IBAction func firstEnd(_ sender: Any) {
+    }
+    @IBAction func themeEnd(_ sender: Any) {
     }
     
     /*
@@ -295,4 +337,3 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
      */
     
 }
-
