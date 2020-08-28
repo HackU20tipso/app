@@ -24,6 +24,8 @@ class QuestionnareData {
         self.questions.append(Q_struct(theme: a, gender: a, category: b, age: c, url: d))
     }
     
+    //genderとageをとってくる
+    
     //urlとthemeゲットする
     public func getAllReports(gender: String, age: String, completion: @escaping ([Q_struct])->()) -> [Q_struct] {
         var result = [Q_struct]()

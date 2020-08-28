@@ -29,6 +29,7 @@ class WebListTableTableViewController: UITableViewController {
     //var me = AppUser (data : ["UserPoint" : 1])
     
   
+    let me = AppUser()
     
     // MARK: - Table view data source
     // セクションの個数
@@ -78,11 +79,13 @@ class WebListTableTableViewController: UITableViewController {
             }
         }
     }
-
+    
+    let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
         print("ここです！！！！！")
         print(fromAppDelegate.ThisUsername)
         print(fromAppDelegate.Thispassword)
@@ -92,7 +95,7 @@ class WebListTableTableViewController: UITableViewController {
         //test1.makeQ(a: "男性",b: "心理系",c: "19",d: "google.com")
         //test1.makeQ(a: "女性",b: "心理系",c: "19",d: "google.com")
         
-        let me = AppUser()
+        
         
         /*let gender_age = me.getPrivacy(
             name: self.fromAppDelegate.ThisUsername,
@@ -103,8 +106,22 @@ class WebListTableTableViewController: UITableViewController {
 
         
         //仮置きのプロフィール
-        let arg_gender = "男性"
-        let arg_age = "10代"
+        var arg_gender = "男性"
+        var arg_age = "10代"
+        
+        self.me.get_age_gender(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{(age, gender) in
+            arg_gender = gender
+            arg_age = age
+            print("年齢, 性別")
+            print(arg_age)
+            print(arg_gender)
+            print("覚醒！！！！")
+            
+        })
+        
+        /*
+        func get_age_gender(name: String, password: String, complete: @escaping(String, String) -> ()){
+        */
         
         //append test
         section1.append((name: "test", url: "test.com"))
