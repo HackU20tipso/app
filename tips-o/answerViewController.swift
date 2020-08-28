@@ -22,8 +22,15 @@ class answerViewController: UIViewController {
     // シーン移動の際に設定されるWebデータ
     var data:(name:String, url:String)?
     
+    let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("ここです！！！！！")
+        print(fromAppDelegate.ThisUsername)
+        //fromAppDelegate.Thispassword = "うふ"
+        print(fromAppDelegate.Thispassword)
          
         let da = "ab"
         // dataが設定されていればwebDataに代入する

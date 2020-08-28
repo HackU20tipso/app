@@ -55,9 +55,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(fromAppDelegate.globalVar)
-        fromAppDelegate.ThisUsername = "あは体験"
+        //fromAppDelegate.ThisUsername = "あは体験"
         print(fromAppDelegate.ThisUsername)
-        fromAppDelegate.Thispassword = "うふ"
+        //fromAppDelegate.Thispassword = "うふ"
+        print(fromAppDelegate.Thispassword)
         
         // Do any additional setup after loading the view.
         // [START setup]

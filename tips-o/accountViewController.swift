@@ -145,11 +145,17 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         
     }
     
+    let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("ここです！！！！！")
+        print(fromAppDelegate.ThisUsername)
+        //fromAppDelegate.Thispassword = "うふ"
+        print(fromAppDelegate.Thispassword)
         
         
         //docRef = Firestore.firestore().collection("AccountData").document()
