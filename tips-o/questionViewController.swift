@@ -56,16 +56,17 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         for i in selectedPerson{
             labelText += "\(i)  "
         }
-        print(labelText)
         
     }
     
     var docRef2: DocumentReference!
     var docRef_category: DocumentReference!
+
     
     @IBAction func saveTapped2(_ sender: Any) {
-        
+        print("ここ\(currentPoint)")
         guard let quesText = quesLabel.text, !quesText.isEmpty else {return}
+        print("ああ")
         guard let urlAuther = urlTextField.text, !urlAuther.isEmpty else {return}
         guard let targetcategory = category, !targetcategory.isEmpty else {return}
         guard let targetgender = gender, !targetgender.isEmpty else {return}
@@ -74,9 +75,9 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         
         let DataToSave2 : [String: Any] = ["url" : urlAuther ,"target_age" : targetage, "target_category" : targetcategory, "target_gender" : targetgender ,"theme" : themetag]
         
-        
         //ポイント3より大きかったらボタン押せる
-        if(currentPoint >= 0){
+        print(self.currentPoint >= 0)
+        if(true){
             print("どうなってます...?")
             docRef2.setData(DataToSave2){ (error) in
                 if let error = error{
@@ -91,13 +92,9 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
             
             let _ = self.me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
                 print("みずきち\(result)")
-    
+                
                 self.label.text = "現在のポイントは\(self.currentPoint)です"
             })
-        }
- 
-        else{
-            
         }
     }
     
@@ -113,44 +110,44 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
             self.currentPoint = result
             self.label.text = "現在のポイントは\(self.currentPoint)です"
         })
-             print("パスの取得")
-             print("\(self.me.x)")
-             
-            print(self.userpath)
-             
-            self.label.text = "現在のポイントは\(self.currentPoint)です"
-             
-             print("あああああああああああああああああああ")
-             print(points[0])
-             
-             print("ここです！！！！！")
-             print(self.fromAppDelegate.ThisUsername)
-             //fromAppDelegate.Thispassword = "うふ"
-             print(self.fromAppDelegate.Thispassword)
-             
-             //pickerの設定
-             for _ in 0 ... 2{
-                 self.twoDimArray.append([])
-             }
-             
-             self.themepick.tag = 0
-             self.typepick.tag = 1
-             self.targetpick.tag = 2
-             
-            self.twoDimArray[0] = ["心理系","情報系","食物系","その他"]
-            self.twoDimArray[1] = ["女性","男性","どちらでもない"]
-            self.twoDimArray[2] = ["10代","20代","30代","40代","それ以上","全年齢"]
-             
-            self.selectedPerson = ["心理系","女性","10代"]
-             
-            self.targetpick.delegate = self
-            self.targetpick.dataSource = self
-            self.themepick.delegate = self
-            self.themepick.dataSource = self
-            self.typepick.delegate = self
-            self.typepick.dataSource = self
-             
-            self.docRef2 = Firestore.firestore().collection("QuestionnareData").document()
+        print("パスの取得")
+        print("\(self.me.x)")
+        
+        print(self.userpath)
+        
+        self.label.text = "現在のポイントは\(self.currentPoint)です"
+        
+        print("あああああああああああああああああああ")
+        print(points[0])
+        
+        print("ここです！！！！！")
+        print(self.fromAppDelegate.ThisUsername)
+        //fromAppDelegate.Thispassword = "うふ"
+        print(self.fromAppDelegate.Thispassword)
+        
+        //pickerの設定
+        for _ in 0 ... 2{
+            self.twoDimArray.append([])
+        }
+        
+        self.themepick.tag = 0
+        self.typepick.tag = 1
+        self.targetpick.tag = 2
+        
+        self.twoDimArray[0] = ["心理系","情報系","食物系","その他"]
+        self.twoDimArray[1] = ["女性","男性","どちらでもない"]
+        self.twoDimArray[2] = ["10代","20代","30代","40代","それ以上","全年齢"]
+        
+        self.selectedPerson = ["心理系","女性","10代"]
+        
+        self.targetpick.delegate = self
+        self.targetpick.dataSource = self
+        self.themepick.delegate = self
+        self.themepick.dataSource = self
+        self.typepick.delegate = self
+        self.typepick.dataSource = self
+        
+        self.docRef2 = Firestore.firestore().collection("QuestionnareData").document()
         
         
         print("パスの取得")
@@ -158,7 +155,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
             print("きたこれ\(result)")
             self.docID = result
         })
-               
+        
     }
     
     //キーボードしまう
