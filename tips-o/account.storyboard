@@ -17,18 +17,11 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0f-tv-6Xf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.31482070680000002" green="0.4463918805" blue="0.76259815689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Y4D-5g-bl7"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="account">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vor-Cx-5yH">
@@ -40,9 +33,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="rcX-Bd-qWM"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="name">
+                                    <fragment content="名前">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="HiraMaruProN-W4"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -55,9 +48,9 @@
                                     <constraint firstAttribute="height" constant="50" id="dJz-e6-Yv3"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="age">
+                                    <fragment content="年齢">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="HiraMaruProN-W4"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -70,9 +63,9 @@
                                     <constraint firstAttribute="height" constant="50" id="fKx-qa-ziu"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="belong">
+                                    <fragment content="職業">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="HiraMaruProN-W4"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -85,37 +78,16 @@
                                     <constraint firstAttribute="height" constant="50" id="fT4-ZG-pgH"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="from">
+                                    <fragment content="居住地">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="HiraMaruProN-W4"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-QX-XMw">
-                                <rect key="frame" x="265" y="445" width="100" height="60"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="8TE-Ba-cFL"/>
-                                    <constraint firstAttribute="height" constant="60" id="mbb-UX-JKU"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="save">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="saveTapped:" destination="bCf-QD-7Tb" eventType="touchUpInside" id="exS-cR-X2x"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-UX-Okj">
                                 <rect key="frame" x="115" y="335" width="255" height="50"/>
                                 <constraints>
@@ -134,13 +106,18 @@
                                     <constraint firstAttribute="height" constant="50" id="XMZ-Il-yeH"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLS-1P-Ar9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLS-1P-Ar9">
                                 <rect key="frame" x="10" y="280" width="100" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Eks-0f-Kcc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="性別">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="HiraMaruProN-W4"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLQ-rA-4FJ">
@@ -161,11 +138,17 @@
                                     <action selector="nameTag:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="pyi-uj-0p9"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHz-zw-vJ8">
-                                <rect key="frame" x="10" y="520" width="74" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHz-zw-vJ8">
+                                <rect key="frame" x="10" y="520" width="85" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="パスワード">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gdr-6O-Qpn">
@@ -177,18 +160,51 @@
                                     <action selector="passTag:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="Gra-CH-gV0"/>
                                 </connections>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account_settei_white" translatesAutoresizingMaskIntoConstraints="NO" id="uz6-Nv-0Y4">
+                                <rect key="frame" x="47.5" y="54" width="280" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="4rT-0S-hGV"/>
+                                    <constraint firstAttribute="width" constant="280" id="XJQ-kI-ipm"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-QX-XMw">
+                                <rect key="frame" x="278" y="487" width="81" height="41"/>
+                                <color key="backgroundColor" red="0.31482070680000002" green="0.4463918805" blue="0.76259815689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="QWX-xz-1i2"/>
+                                    <constraint firstAttribute="height" constant="41" id="z3X-0N-0Po"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="保存">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="15" name=".HiraKakuInterface-W3"/>
+                                                <font key="NSOriginalFont" metaFont="system" size="15"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="bCf-QD-7Tb" eventType="touchUpInside" id="exS-cR-X2x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="3er-kd-vD6" firstAttribute="leading" secondItem="xsY-GS-UxA" secondAttribute="leading" id="08B-Nq-yNd"/>
                             <constraint firstItem="PJC-Oa-1xb" firstAttribute="top" secondItem="K0f-tv-6Xf" secondAttribute="bottom" constant="20" id="3Hm-6B-320"/>
+                            <constraint firstItem="uz6-Nv-0Y4" firstAttribute="centerX" secondItem="n1B-bY-iN2" secondAttribute="centerX" id="3zr-Yi-Pp4"/>
                             <constraint firstItem="zCY-Ou-2PA" firstAttribute="trailing" secondItem="vor-Cx-5yH" secondAttribute="trailing" id="5bQ-yt-2wH"/>
                             <constraint firstItem="xsY-GS-UxA" firstAttribute="top" secondItem="cLS-1P-Ar9" secondAttribute="bottom" constant="5" id="5yv-zN-9oM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="FjW-QX-XMw" secondAttribute="bottom" constant="90" id="7yz-rz-I0s"/>
                             <constraint firstItem="cLS-1P-Ar9" firstAttribute="trailing" secondItem="zCY-Ou-2PA" secondAttribute="trailing" id="AFP-xX-Uf7"/>
                             <constraint firstItem="PJC-Oa-1xb" firstAttribute="leading" secondItem="vor-Cx-5yH" secondAttribute="trailing" constant="5" id="BWt-3e-gbG"/>
                             <constraint firstItem="2M2-YC-uN5" firstAttribute="trailing" secondItem="CLQ-rA-4FJ" secondAttribute="trailing" id="CcH-h8-dHJ"/>
-                            <constraint firstItem="u4g-8Z-mEe" firstAttribute="trailing" secondItem="FjW-QX-XMw" secondAttribute="trailing" constant="10" id="DUd-k3-Mdi"/>
                             <constraint firstItem="CLQ-rA-4FJ" firstAttribute="leading" secondItem="PJC-Oa-1xb" secondAttribute="leading" id="GQN-x3-aOR"/>
+                            <constraint firstItem="uz6-Nv-0Y4" firstAttribute="top" secondItem="u4g-8Z-mEe" secondAttribute="top" constant="54" id="Gue-37-gKR"/>
                             <constraint firstItem="2M2-YC-uN5" firstAttribute="leading" secondItem="CLQ-rA-4FJ" secondAttribute="leading" id="Gv6-W2-hZ3"/>
                             <constraint firstItem="zCY-Ou-2PA" firstAttribute="leading" secondItem="vor-Cx-5yH" secondAttribute="leading" id="Hvq-iD-eaD"/>
                             <constraint firstItem="vor-Cx-5yH" firstAttribute="leading" secondItem="u4g-8Z-mEe" secondAttribute="leading" constant="10" id="KOM-uQ-JzG"/>
@@ -203,6 +219,7 @@
                             <constraint firstItem="CLQ-rA-4FJ" firstAttribute="trailing" secondItem="PJC-Oa-1xb" secondAttribute="trailing" id="c4o-JT-nUV"/>
                             <constraint firstItem="zCY-Ou-2PA" firstAttribute="top" secondItem="vor-Cx-5yH" secondAttribute="bottom" constant="5" id="eXs-Ap-d7T"/>
                             <constraint firstItem="BZf-Gy-vYn" firstAttribute="leading" secondItem="G8r-UX-Okj" secondAttribute="leading" id="g78-m8-oae"/>
+                            <constraint firstItem="u4g-8Z-mEe" firstAttribute="trailing" secondItem="FjW-QX-XMw" secondAttribute="trailing" constant="16" id="omJ-2T-JPm"/>
                             <constraint firstItem="xsY-GS-UxA" firstAttribute="leading" secondItem="cLS-1P-Ar9" secondAttribute="leading" id="rMg-zJ-kCv"/>
                             <constraint firstItem="K0f-tv-6Xf" firstAttribute="trailing" secondItem="u4g-8Z-mEe" secondAttribute="trailing" id="ro3-Ap-rfd"/>
                             <constraint firstItem="u4g-8Z-mEe" firstAttribute="trailing" secondItem="PJC-Oa-1xb" secondAttribute="trailing" constant="5" id="v1Z-Ve-1Jc"/>
@@ -235,6 +252,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="account_settei_white" width="240" height="46"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
     </resources>
 </document>
