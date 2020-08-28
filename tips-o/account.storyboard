@@ -158,7 +158,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="nameOut:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="8PY-J4-opM"/>
+                                    <action selector="nameTag:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="pyi-uj-0p9"/>
                                 </connections>
                             </textField>
                         </subviews>

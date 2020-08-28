@@ -10,6 +10,7 @@ import FirebaseAnalytics
 
 class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
+    
     @IBOutlet weak var quateLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
@@ -21,19 +22,19 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBOutlet weak var fromPickerView: UIPickerView!
     
     var twoDimArray = [[String]]()
-       var selectedPerson = [String]()
-       
-       func numberOfComponents(in pickerView: UIPickerView) -> Int {
-           return 1
-       }
-       
-       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-           return twoDimArray[pickerView.tag].count
-       }
-       
-       func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
-           return twoDimArray[pickerView.tag][row]
-       }
+    var selectedPerson = [String]()
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return twoDimArray[pickerView.tag].count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+        return twoDimArray[pickerView.tag][row]
+    }
     
     var age: String!
     var gender : String!
@@ -41,17 +42,17 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     var from : String!
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    
-    selectedPerson[pickerView.tag] = twoDimArray[pickerView.tag][row]
-    var labelText = ""
-    age = selectedPerson[0]
-    gender = selectedPerson[1]
-    belong = selectedPerson[2]
-    from = selectedPerson[3]
-    for i in selectedPerson{
-        labelText += "\(i)  "
-    }
-    print(labelText)
+        
+        selectedPerson[pickerView.tag] = twoDimArray[pickerView.tag][row]
+        var labelText = ""
+        age = selectedPerson[0]
+        gender = selectedPerson[1]
+        belong = selectedPerson[2]
+        from = selectedPerson[3]
+        for i in selectedPerson{
+            labelText += "\(i)  "
+        }
+        print(labelText)
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,49 +75,38 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         guard let genderAuther = gender, !ageAuther.isEmpty else {return}
         guard let belongAuther = belong, !belongAuther.isEmpty else {return}
         guard let fromAuther = from, !fromAuther.isEmpty else {return}
-        let DataToSave: [String: Any] = ["name" : nameText, "age" : ageAuther, "gender" : genderAuther, "belong" : belongAuther, "from" : fromAuther]
         
-        //docRef.document("profile").setData(DataToSave)
-    
+        let me = AppUser()
         
-        docRef.setData(DataToSave){ (error) in
-            if let error = error{
-                print("get on an error : \(error.localizedDescription)")
-            }
-            else{
-                print("data has been saved!")
-            }
-        }
-        docRef3.setData(DataToSave){ (error) in
-            if let error = error{
-                print("get on an error : \(error.localizedDescription)")
-            }
-            else{
-                print("data has been saved!")
-            }
-        }
+        //追加
+        
+        me.setAccount(name: nameText, age: ageAuther, gender: genderAuther, belong: belongAuther, from: fromAuther, point: 0, completion:
+            { isSuccess in print("\(isSuccess)")})
+        
+        print("いけた!!!!")
+        
+        me.Add_point()
+        print("\(me.userPoint)")
+        
+        
     }
-
+    
     
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        docRef = Firestore.firestore().collection("AccountData").document()
-        print("バナナ")
-        docRef3 = Firestore.firestore().collection("バナナ").document("バナナ")
-
+        //docRef = Firestore.firestore().collection("AccountData").document()
+        /*
+         Firestore.firestore().collection("AccountData").document("EcAJ8QLDwFvCg5tPPK4w").getDocument { (snap, error) in
+         if let error = error {
+         fatalError("\(error)")
+         }
+         guard let data = snap?.data() else { return }
+         print(data)
+         //self.label.text = "\(data)"
+         */
         
-        
-        Firestore.firestore().collection("AccountData").document("EcAJ8QLDwFvCg5tPPK4w").getDocument { (snap, error) in
-            if let error = error {
-                fatalError("\(error)")
-            }
-            guard let data = snap?.data() else { return }
-            print(data)
-            //self.label.text = "\(data)"
-            
-        }
         
         //pickerの設定
         for _ in 0 ... 3{
@@ -143,25 +133,13 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         belongPickerView.dataSource = self
         fromPickerView.delegate = self
         fromPickerView.dataSource = self
-        
     }
     
-    
-    
-    
-    
-    @IBAction func nameOut(_ sender: Any) {
+    @IBAction func nameTag(_ sender: Any) {
     }
-    
-    @IBAction func ageEnd(_ sender: Any) {
-    }
-    
-    @IBAction func belongEnd(_ sender: Any) {
-    }
-    
-    @IBAction func fromEnd(_ sender: Any) {
-    }
-    
-   
-
 }
+
+
+
+
+
