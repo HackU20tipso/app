@@ -81,28 +81,73 @@ class WebListTableTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let test1 = QuestionnareData()
-        test1.makeQ(a: "男性",b: "心理系",c: "19",d: "google.com")
-        test1.makeQ(a: "女性",b: "心理系",c: "19",d: "google.com")
         
-        test1.getAllReports(completion: {
+        let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        print("ここです！！！！！")
+        print(fromAppDelegate.ThisUsername)
+        print(fromAppDelegate.Thispassword)
+        
+        let Questionnare = QuestionnareData()
+        
+        //test1.makeQ(a: "男性",b: "心理系",c: "19",d: "google.com")
+        //test1.makeQ(a: "女性",b: "心理系",c: "19",d: "google.com")
+        
+        let arg_gender = "男性"
+        let arg_age = "10代"
+        let arg_category = "心理系"
+        
+        section1.append((name: "test", url: "test.com"))
+        
+        let result = Questionnare.getAllReports(gender: arg_gender, age: arg_age, category: arg_category, completion: {
+            questions in
+            if(Questionnare.questions[safe: 3] != nil){
+                print("1OutofRange大丈夫！")
+            }else{
+                print("1OutofRange大丈夫じゃない")
+            }
+            if(Questionnare.questions[3].category == "情報系"){
+                print("\(Questionnare.questions[3].category)")
+                section0.append((name: Questionnare.questions[3].title, url: Questionnare.questions[3].url))
+            }
+            else if(Questionnare.questions[3].category == "心理系"){
+                print("\(Questionnare.questions[3].category)")
+                section1.append((name: Questionnare.questions[3].title, url: Questionnare.questions[3].url))
+            }
+            else if(Questionnare.questions[3].category == "食物系"){
+                print("\(Questionnare.questions[3].category)")
+                section2.append((name: Questionnare.questions[3].title, url: Questionnare.questions[3].url))
+            }
+            else{
+                print("else! \(Questionnare.questions[3].category)")
+            }
+            for Qs in Questionnare.questions {
+                if(Qs.category == "情報系"){        section0.append((name: Qs.gender, url: Qs.url))
+                }
+                if(Qs.category == "心理系"){        section1.append((name: Qs.gender, url: Qs.url))
+                }
+                if(Qs.category == "食物系"){        section2.append((name: Qs.gender, url: Qs.url))
+                }
+            }
             //配列中身print
-            questions in print("test1 is \(test1.questions)")})
+             print("２回目 \(Questionnare.questions)")})
         
-        print("２回目 test1 is \(test1.questions)")
+        print("１回目 \(result)")
         
-        if(test1.questions[safe: 5] != nil){
-            print("OutofRange大丈夫")
+        if(result[safe: 3] != nil){
+            print("2OutofRange大丈夫！")
         }else{
-            print("OutofRange")
+            print("2OutofRange大丈夫じゃない")
         }
         
-        /*if(test1.questions[1].category == "情報系"){        section0.append((name: test1.questions[1].gender, url: test1.questions[1].url))
-        }
-        if(test1.questions[1].category == "心理系"){        section1.append((name: test1.questions[1].gender, url: test1.questions[1].url))
-        }
-        if(test1.questions[1].category == "食物系"){        section2.append((name: test1.questions[1].gender, url: test1.questions[1].url))
+        /*for Qs in result {
+            if(Qs.category == "情報系"){        section0.append((name: Qs.gender, url: Qs.url))
+            }
+            if(Qs.category == "心理系"){        section1.append((name: Qs.gender, url: Qs.url))
+            }
+            if(Qs.category == "食物系"){        section2.append((name: Qs.gender, url: Qs.url))
+            }
         }*/
+        
     }
 }
 
