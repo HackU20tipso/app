@@ -22,7 +22,8 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     
     
     
-    @IBOutlet weak var sendMessege: UILabel!
+    @IBOutlet weak var message: UILabel!
+    
     
     @IBOutlet weak var theme: UITextField!
     
@@ -323,8 +324,8 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     //キーボードしまう
     @IBAction func firstEnd(_ sender: Any) {
     }
-    @IBAction func themeEnd(_ sender: Any) {
-    }
+    
+    
     
     /*
      @IBAction func cEnd(_ sender: Any) {
