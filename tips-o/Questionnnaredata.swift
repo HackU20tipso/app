@@ -6,7 +6,7 @@ import GoogleSignIn
 import FirebaseAnalytics
 
 struct Q_struct {
-    var title: String
+    var theme: String
     var gender: String
     var category: String
     var age: String
@@ -21,11 +21,11 @@ class QuestionnareData {
     //questions.append(Q_struct(gender: "男性", category: "情報系", age: "19", url: "google.com"))
     
     func makeQ(a: String, b: String, c: String, d: String){
-        self.questions.append(Q_struct(title: a, gender: a, category: b, age: c, url: d))
+        self.questions.append(Q_struct(theme: a, gender: a, category: b, age: c, url: d))
     }
     
     //urlとthemeゲットする
-    public func getAllReports(gender: String, age: String, category: String, completion: @escaping ([Q_struct])->()) -> [Q_struct] {
+    public func getAllReports(gender: String, age: String, completion: @escaping ([Q_struct])->()) -> [Q_struct] {
         var result = [Q_struct]()
         let reportDocRef = db.collection("QuestionnareData").whereField("target_gender", isEqualTo: gender).whereField("target_age", isEqualTo: age)
         reportDocRef.getDocuments() { (querySnapshot, err) in
@@ -33,7 +33,7 @@ class QuestionnareData {
                 //var questions: [Q_struct]()
                 for document in querySnapshot.documents {
                     let data = document.data()
-                    let question = Q_struct(title:data["title"] as? String ?? "", gender: data["target_gender"] as? String ?? "", category: data["target_category"] as? String ?? "", age: data["target_age"] as? String ?? "", url: data["url"] as? String ?? "")
+                    let question = Q_struct(theme:data["theme"] as? String ?? "", gender: data["target_gender"] as? String ?? "", category: data["target_category"] as? String ?? "", age: data["target_age"] as? String ?? "", url: data["url"] as? String ?? "")
                     self.questions.append(question)
                     //要素数
                     print("\(self.questions.count) ")
@@ -51,4 +51,5 @@ class QuestionnareData {
         return result
     }
 }
+
 
