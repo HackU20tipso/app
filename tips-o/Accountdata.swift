@@ -15,9 +15,30 @@ struct A_struct {
     var belong: String
     var point: Int
     var password: String
+    
 }
 
-class AppUser {
+
+
+class AppUser : NSObject {
+    
+    /*
+    static let instance = AppUser()
+    
+    var ThisUserName: String
+    static var ThisUserPassword: String!
+    
+    */
+    
+    /*
+    public func get_Username(x : String){
+        AppUser.ThisUserName = x
+    }
+    public func Username() -> String{
+        return (AppUser.ThisUserName ?? "")
+    }
+  */
+   
     
     var isEmpty2 : String = ""
     var userPoint: Int?
@@ -36,6 +57,7 @@ class AppUser {
     func makeA(a: String, b: String, c: String, d: String, e: String, f: Int, g :String){
         accounts.append(A_struct(name: a, age: b, gender: c, from: d, belong: e, point: f, password: g))
     }
+    
     /*
      init(data: [String: Any]){
      
@@ -49,7 +71,18 @@ class AppUser {
      }
      */
     
-    init(){
+    /*
+    init(data: [String: Any]) {
+        ThisUserName: data["name"] as! String
+        ThisUserPassword: data["Password"] as! String
+    }
+ */
+    
+    override init(){
+        /*
+        ThisUserName = data["name"] as? String
+        ThisUserPassword = data["password"] as? String
+         */
         nameText1 = ""
         ageAuther = ""
         genderAuther = ""

@@ -10,6 +10,11 @@ import FirebaseAnalytics
 
 class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
+    /* func print("\(ThisUserName as? String ?? "入ってないよ")")*/
+    
+    
+    
+    
     
     @IBOutlet weak var quateLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -21,6 +26,26 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBOutlet weak var genderPickerView: UIPickerView!
     @IBOutlet weak var belongPickerView: UIPickerView!
     @IBOutlet weak var fromPickerView: UIPickerView!
+    
+    
+    let me = AppUser()
+
+    
+    /*
+    me.isMatch(name: "たなか", password: "そうた", complete:{result in
+    print("")
+    if (result){
+    print("正解")
+    }
+    else{
+    
+    }
+    })
+ */
+    
+    
+    
+    
     
     var twoDimArray = [[String]]()
     var selectedPerson = [String]()
@@ -81,13 +106,11 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         guard let fromAuther = from, !fromAuther.isEmpty else {return}
         guard let passwordText = passwordTextField.text, !passwordText.isEmpty else {return}
         
-        let me = AppUser()
-        
         
         //save.isEnabled = (!me.isMatch(name: nameText, password: passwordText))
         //save.isEnabled = (!me.isMatch(name: nameText, password: passwordText))
-       
-       // print("どうですか?\(!me.isMatch(name: nameText, password: passwordText, complete: {<#(Bool) -> Void#>))")
+        
+        // print("どうですか?\(!me.isMatch(name: nameText, password: passwordText, complete: {<#(Bool) -> Void#>))")
         
         me.isMatch(name: nameText, password: passwordText, complete:{result in
             print("")
@@ -102,14 +125,14 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
             else{
                 
                 self.quateLabel.text = "設定できます"
-            //追加
-            
-            me.setAccount(name: nameText, age: ageAuther, gender: genderAuther, belong: belongAuther, from: fromAuther, point: 0, password : passwordText, completion:
-                { isSuccess in print("\(isSuccess)")})
+                //追加
+                
+                self.me.setAccount(name: nameText, age: ageAuther, gender: genderAuther, belong: belongAuther, from: fromAuther, point: 0, password : passwordText, completion:
+                    { isSuccess in print("\(isSuccess)")})
             }
             
         })
-    
+        
         
         
         //名前とパスワードが一致しているものが見つかったらもう一度
@@ -127,6 +150,8 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         //docRef = Firestore.firestore().collection("AccountData").document()
         /*
          Firestore.firestore().collection("AccountData").document("EcAJ8QLDwFvCg5tPPK4w").getDocument { (snap, error) in
