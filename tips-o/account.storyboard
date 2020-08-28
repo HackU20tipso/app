@@ -94,7 +94,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-QX-XMw">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-QX-XMw">
                                 <rect key="frame" x="265" y="445" width="100" height="60"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -173,6 +173,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="passTag:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="Gra-CH-gV0"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -193,7 +196,6 @@
                             <constraint firstItem="vor-Cx-5yH" firstAttribute="top" secondItem="K0f-tv-6Xf" secondAttribute="bottom" constant="20" id="O9J-aq-AiN"/>
                             <constraint firstItem="BZf-Gy-vYn" firstAttribute="top" secondItem="G8r-UX-Okj" secondAttribute="bottom" constant="5" id="PMq-cU-n6g"/>
                             <constraint firstItem="3er-kd-vD6" firstAttribute="top" secondItem="xsY-GS-UxA" secondAttribute="bottom" constant="5" id="RXk-CV-WVu"/>
-                            <constraint firstItem="FjW-QX-XMw" firstAttribute="top" secondItem="BZf-Gy-vYn" secondAttribute="bottom" constant="5" id="Vbo-ll-GbT"/>
                             <constraint firstItem="BZf-Gy-vYn" firstAttribute="trailing" secondItem="G8r-UX-Okj" secondAttribute="trailing" id="XHl-2E-7PR"/>
                             <constraint firstItem="K0f-tv-6Xf" firstAttribute="leading" secondItem="u4g-8Z-mEe" secondAttribute="leading" id="ZSa-MZ-Pev"/>
                             <constraint firstItem="CLQ-rA-4FJ" firstAttribute="top" secondItem="PJC-Oa-1xb" secondAttribute="bottom" constant="5" id="b4X-GD-Fm1"/>
@@ -224,6 +226,7 @@
                         <outlet property="nameTextField" destination="PJC-Oa-1xb" id="k3b-b1-fne"/>
                         <outlet property="passwordTextField" destination="Gdr-6O-Qpn" id="u91-Dp-aOz"/>
                         <outlet property="quateLabel" destination="K0f-tv-6Xf" id="NkM-u8-E4p"/>
+                        <outlet property="save" destination="FjW-QX-XMw" id="KQ5-dq-1Nm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfv-yK-qi2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

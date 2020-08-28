@@ -70,6 +70,8 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     var docRef_belong: DocumentReference!
     var docRef_from: DocumentReference!
     
+    @IBOutlet weak var save: UIButton!
+    
     @IBAction func saveTapped(_ sender: Any) {
         guard let nameText = nameTextField.text, !nameText.isEmpty else {return}
         guard let ageAuther = age, !ageAuther.isEmpty else {return}
@@ -80,15 +82,33 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         
         let me = AppUser()
         
+        
+        //save.isEnabled = (!me.isMatch(name: nameText, password: passwordText))
+        
+        //print("どっちかな\(!me.isMatch(name: nameText, password: passwordText))")
+        
+        if (me.isMatch(name: nameText, password: passwordText)){
+            print("確認\(nameText) \(passwordText)")
+            print("一致してるよ")
+            quateLabel.text = "もう一度パスワードを設定し直してください"
+            
+            
+        }
+        else{
+            print("確認\(nameText) \(passwordText)")
+            print("良さげ")
         //追加
         
         me.setAccount(name: nameText, age: ageAuther, gender: genderAuther, belong: belongAuther, from: fromAuther, point: 0, password : passwordText, completion:
             { isSuccess in print("\(isSuccess)")})
+        }
+        
+        //名前とパスワードが一致しているものが見つかったらもう一度
         
         print("いけた!!!!")
         
         me.Add_point()
-        print("\(me.userPoint)")
+        //print("\(me.userPoint!)")
         
         
     }
@@ -138,6 +158,8 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     }
     
     @IBAction func nameTag(_ sender: Any) {
+    }
+    @IBAction func passTag(_ sender: Any) {
     }
 }
 

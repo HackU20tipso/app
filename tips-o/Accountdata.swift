@@ -7,6 +7,16 @@ import FirebaseAnalytics
 
 import Firebase
 
+struct A_struct {
+    var name: String
+    var age: String
+    var gender: String
+    var from: String
+    var belong: String
+    var point: Int
+    var password: String
+}
+
 
 class AppUser {
     
@@ -21,29 +31,79 @@ class AppUser {
     var userRef: DocumentReference!
     var isSuccess = true
     
-    /*
-    init(data: [String: Any]){
-        
-        nameText1 = data["name"] as? String
-        ageAuther = data["age"] as? String
-        genderAuther = data["gender"] as? String
-        belongAuther = data["belong"] as? String
-        fromAuther = data["from"] as? String
-        userPoint = data["userPoint"] as? Int
- 
+    var accounts = [A_struct]()
+    
+    func makeA(a: String, b: String, c: String, d: String, e: String, f: Int, g :String){
+        accounts.append(A_struct(name: a, age: b, gender: c, from: d, belong: e, point: f, password: g))
     }
- */
- 
+    
+    /*
+     init(data: [String: Any]){
+     
+     nameText1 = data["name"] as? String
+     ageAuther = data["age"] as? String
+     genderAuther = data["gender"] as? String
+     belongAuther = data["belong"] as? String
+     fromAuther = data["from"] as? String
+     userPoint = data["userPoint"] as? Int
+     
+     }
+     */
+    
     
     init(){
-           nameText1 = ""
-           ageAuther = ""
-           genderAuther = ""
-           belongAuther = ""
-           fromAuther = ""
-           userPoint = 0
-       }
- 
+        nameText1 = ""
+        ageAuther = ""
+        genderAuther = ""
+        belongAuther = ""
+        fromAuther = ""
+        userPoint = 0
+    }
+    
+    func isMatch(name: String, password: String) -> Bool{
+        
+        var search: Void = db.collection("AccountData").whereField("name", isEqualTo: name).whereField("password", isEqualTo: password)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                }
+        }
+        print("ああああああああ\(search)")
+        
+        if search == (){
+            print("\(search)")
+            return false        }
+        else{
+            print("こっち...?")
+            return true
+        }
+    }
+    
+    //パスワードが一致してるか探す
+    /*
+    public func getAllReports(completion: @escaping ([A_struct])->()) {
+        let reportDocRef = db.collection("AccountData")
+        reportDocRef.getDocuments() { (querySnapshot, err) in
+            if err == nil, let querySnapshot = querySnapshot {
+                for document in querySnapshot.documents {
+                    let data = document.data()
+                    let question = A_struct(name: data["name"] as? String ?? "", age: data["age"] as? String ?? "", gender: data["gender"] as? String ?? "", from: data["from"] as? String ?? "", belong: data["belong"] as? String ?? "",point: data["point"] as? Int ?? 0)
+                    self.accounts.append(question)
+                }
+                completion(self.accounts)
+                print("\(self.accounts)")
+            } else if err != nil {
+                completion(self.accounts)
+                print("\(String(describing: err))")
+            }
+        }
+    }
+ */
+    
     
     
     func Add_point(){
@@ -57,13 +117,14 @@ class AppUser {
     }
     
     public func setAccount(/*authorRef: String,*/
-                           name: String,
-                           age: String,
-                           gender: String,
-                           belong: String,
-                           from: String,
-                           point: Int,
-                           completion: @escaping (Bool)->(Void)) {
+        name: String,
+        age: String,
+        gender: String,
+        belong: String,
+        from: String,
+        point: Int,
+        password :String,
+        completion: @escaping (Bool)->(Void)) {
         self.getUserReference() { userRef in
             self.userRef = userRef
         }
@@ -74,7 +135,8 @@ class AppUser {
             "gender" : gender,
             "belong" : belong,
             "from" : from,
-            "point" : userPoint!
+            "point" : userPoint,
+            "password" : password
             
         ]) { error in
             if error != nil {
@@ -84,12 +146,16 @@ class AppUser {
             }
             completion(self.isSuccess)
         }
+        
     }
     
     //private
-    public func getUserReference(completion: @escaping (DocumentReference)->()) {
+    public func getUserReference(completion: @escaping (DocumentReference)->()) -> String{
         let userRefString = db.collection("AccountData").document()
         let userRef = db.document(userRefString.path)
+        
         completion(userRef)
+        //print("\(userRefString.path)")
+        return userRefString.path
     }
 }
