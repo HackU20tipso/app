@@ -18,27 +18,7 @@ struct A_struct {
     
 }
 
-
-
 class AppUser : NSObject {
-    
-    /*
-    static let instance = AppUser()
-    
-    var ThisUserName: String
-    static var ThisUserPassword: String!
-    
-    */
-    
-    /*
-    public func get_Username(x : String){
-        AppUser.ThisUserName = x
-    }
-    public func Username() -> String{
-        return (AppUser.ThisUserName ?? "")
-    }
-  */
-   
     
     var isEmpty2 : String = ""
     var userPoint: Int?
@@ -58,31 +38,12 @@ class AppUser : NSObject {
         accounts.append(A_struct(name: a, age: b, gender: c, from: d, belong: e, point: f, password: g))
     }
     
-    /*
-     init(data: [String: Any]){
-     
-     nameText1 = data["name"] as? String
-     ageAuther = data["age"] as? String
-     genderAuther = data["gender"] as? String
-     belongAuther = data["belong"] as? String
-     fromAuther = data["from"] as? String
-     userPoint = data["userPoint"] as? Int
-     
-     }
-     */
-    
-    /*
-    init(data: [String: Any]) {
-        ThisUserName: data["name"] as! String
-        ThisUserPassword: data["Password"] as! String
-    }
- */
-    
     override init(){
         /*
-        ThisUserName = data["name"] as? String
-        ThisUserPassword = data["password"] as? String
+         ThisUserName = data["name"] as? String
+         ThisUserPassword = data["password"] as? String
          */
+        x = ""
         nameText1 = ""
         ageAuther = ""
         genderAuther = ""
@@ -107,7 +68,7 @@ class AppUser : NSObject {
                         isEmpty = document.get("name") as! String
                         
                         print("\(document.documentID) => \(document.data())")
-                         
+                        
                     }
                     
                     complete(isEmpty == name)
@@ -127,8 +88,98 @@ class AppUser : NSObject {
         }
     }
     
+    var x : String
+    
+    //ドキュメントのIDを取得
+    func getPath(name: String, password: String, complete: @escaping(String) -> ()){
+        
+        let _: Void = db.collection("AccountData").whereField("name", isEqualTo: name).whereField("password", isEqualTo: password)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    
+                    var path_s : String = ""
+                    for document in querySnapshot!.documents {
+                        
+                       
+                        path_s = "\(document.documentID)"
+                        print("\(document.documentID) => \(document.data())")
+                        
+                    }
+                    complete(path_s)
+                }
+        }
+    }
     
     
+    /*
+     func getMedicinesName() -> [String] {
+     var medicines = [String]()
+     
+     db.collection("medicines").getDocuments() { (querySnapshot, err) in
+     if let err = err {
+     print("Error getting documents: \(err)")
+     } else {
+     for document in querySnapshot!.documents {
+     let medicineToBeAdded = document.get("name") as! String
+     medicines.append(medicineToBeAdded)
+     }
+     }
+     }
+     return medicines
+     }
+     */
+    
+    
+    
+    //ポイントゲットする
+    func getPoint(name: String, password: String, complete: @escaping (Int) -> ()) -> Bool{
+        
+        //ar result = [Int](repeating:200, count:10)
+        
+        let _: Void = db.collection("AccountData").whereField("name", isEqualTo: name).whereField("password", isEqualTo: password)
+            .getDocuments() { (querySnapshot, err) in
+                
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    
+                    var myp = 200
+                    for document in querySnapshot!.documents {
+                        
+                        
+                        myp = document.get("point") as! Int
+                       print("ここだああああああああああああ")
+                        print("\(document.documentID) => \(document.data())")
+        
+                        
+                    }
+                    //result2 = result[0]
+                    complete(myp)
+                }
+        }
+        return true
+    }
+    
+    //3ポイント減る
+    func heru_Point(curPoint : Int, diffPoint : Int, path : String){
+        var update_Point = curPoint - diffPoint
+        let myRef = db.collection("AccountData").document(path)
+        
+        // Set the "capital" field of the city 'DC'
+        myRef.updateData([
+            "point": update_Point
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+    }
+    
+    //ポイント更新
     func Add_point(){
         if let x = userPoint{
             userPoint! = 1 + x
@@ -138,6 +189,7 @@ class AppUser : NSObject {
             print("ポイントを更新できませんでした")
         }
     }
+    
     
     public func setAccount(/*authorRef: String,*/
         name: String,
