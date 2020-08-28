@@ -63,7 +63,7 @@
                                     <fragment content="テーマ">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -97,7 +97,7 @@
                                     <fragment content="ターゲット">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -149,7 +149,7 @@
                                     <fragment content="テーマ">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -228,7 +228,7 @@
                     <tabBarItem key="tabBarItem" title="Post" image="paperplane" catalog="system" id="LZ1-cD-JT4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="message" destination="tnY-vM-f5V" id="kEL-Ck-Kuz"/>
+                        <outlet property="label" destination="tnY-vM-f5V" id="8AH-0m-Mdy"/>
                         <outlet property="quesLabel" destination="c0n-Bv-aDV" id="kEh-gS-xam"/>
                         <outlet property="targetpick" destination="UsR-gM-ejz" id="eeP-HJ-qD2"/>
                         <outlet property="theme" destination="Qwy-7h-1Lf" id="pzh-sX-hQ8"/>
