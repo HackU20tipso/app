@@ -16,10 +16,9 @@ struct A_struct {
     var point: Int
     var password: String
 }
-
-
 class AppUser {
     
+    var isEmpty2 : String = ""
     var userPoint: Int?
     var nameText1 : String!
     let ageAuther : String!
@@ -36,7 +35,6 @@ class AppUser {
     func makeA(a: String, b: String, c: String, d: String, e: String, f: Int, g :String){
         accounts.append(A_struct(name: a, age: b, gender: c, from: d, belong: e, point: f, password: g))
     }
-    
     /*
      init(data: [String: Any]){
      
@@ -50,7 +48,6 @@ class AppUser {
      }
      */
     
-    
     init(){
         nameText1 = ""
         ageAuther = ""
@@ -60,49 +57,40 @@ class AppUser {
         userPoint = 0
     }
     
-    func isMatch(name: String, password: String) -> Bool{
+    func isMatch(name: String, password: String, complete: @escaping (Bool) -> Void) -> Bool{
         
-        var search: Void = db.collection("AccountData").whereField("name", isEqualTo: name).whereField("password", isEqualTo: password)
+        let _: Void = db.collection("AccountData").whereField("name", isEqualTo: name).whereField("password", isEqualTo: password)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
+                    
+                    var isEmpty : String = ""
                     for document in querySnapshot!.documents {
+                        
+                        print("代入するよ")
+                        isEmpty = document.get("name") as! String
+                        
                         print("\(document.documentID) => \(document.data())")
+                         
                     }
+                    
+                    complete(isEmpty == name)
                 }
         }
-        print("ああああああああ\(search)")
         
-        if search == (){
-            print("\(search)")
-            return false        }
-        else{
-            print("こっち...?")
+        if self.isEmpty2 == name {
+            print("\(self.isEmpty2)")
+            self.isEmpty2 = ""
             return true
         }
-    }
-    
-    //パスワードが一致してるか探す
-    /*
-    public func getAllReports(completion: @escaping ([A_struct])->()) {
-        let reportDocRef = db.collection("AccountData")
-        reportDocRef.getDocuments() { (querySnapshot, err) in
-            if err == nil, let querySnapshot = querySnapshot {
-                for document in querySnapshot.documents {
-                    let data = document.data()
-                    let question = A_struct(name: data["name"] as? String ?? "", age: data["age"] as? String ?? "", gender: data["gender"] as? String ?? "", from: data["from"] as? String ?? "", belong: data["belong"] as? String ?? "",point: data["point"] as? Int ?? 0)
-                    self.accounts.append(question)
-                }
-                completion(self.accounts)
-                print("\(self.accounts)")
-            } else if err != nil {
-                completion(self.accounts)
-                print("\(String(describing: err))")
-            }
+        else{
+            print("\(self.isEmpty2)")
+            print("こっち...?")
+            self.isEmpty2 = ""
+            return false
         }
     }
- */
     
     
     
