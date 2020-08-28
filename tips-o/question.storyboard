@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Post-->
         <scene sceneID="GX2-B6-82m">
             <objects>
                 <viewController id="iVQ-ye-mgd" customClass="questionViewController" customModule="tips_o" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,18 +17,11 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-Bv-aDV">
                                 <rect key="frame" x="0.0" y="44" width="414" height="150"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.31482070680000002" green="0.4463918805" blue="0.76259815689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="yku-s5-nYG"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="question">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYW-BT-KNi">
@@ -38,10 +31,11 @@
                                     <constraint firstAttribute="height" constant="50" id="G2x-7Q-oRO"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="url">
+                                    <fragment content="URL">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="HiraMaruProN-W4"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -66,10 +60,11 @@
                                     <constraint firstAttribute="width" constant="100" id="swa-ns-8TU"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="theme">
+                                    <fragment content="テーマ">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -82,10 +77,11 @@
                                     <constraint firstAttribute="width" constant="100" id="tYV-dM-ngN"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="type">
+                                    <fragment content="系統">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="HiraMaruProN-W4"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -94,15 +90,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D40-Vu-46U">
                                 <rect key="frame" x="10" y="394" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Zqb-lH-cFo"/>
                                     <constraint firstAttribute="width" constant="100" id="hw5-y5-F9d"/>
                                     <constraint firstAttribute="height" constant="50" id="uzu-Jh-p5a"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="target">
+                                    <fragment content="ターゲット">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -122,18 +118,19 @@
                                 <rect key="frame" x="115" y="334" width="289" height="50"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhk-rs-GbA">
-                                <rect key="frame" x="284" y="733" width="100" height="60"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="303" y="752" width="81" height="41"/>
+                                <color key="backgroundColor" red="0.31482070680000002" green="0.4463918805" blue="0.76259815689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Dxt-P5-M0j"/>
-                                    <constraint firstAttribute="height" constant="60" id="a2c-Ic-Mag"/>
+                                    <constraint firstAttribute="width" constant="81" id="Dxt-P5-M0j"/>
+                                    <constraint firstAttribute="height" constant="41" id="a2c-Ic-Mag"/>
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="send">
+                                        <fragment content="送信">
                                             <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="15" name="HiraMaruProN-W4"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -149,10 +146,11 @@
                                     <constraint firstAttribute="height" constant="50" id="K9z-Pn-whV"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="theme">
+                                    <fragment content="テーマ">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -170,11 +168,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnY-vM-f5V">
-                                <rect key="frame" x="10" y="733" width="264" height="60"/>
+                                <rect key="frame" x="10" y="752" width="283" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-13" translatesAutoresizingMaskIntoConstraints="NO" id="LPp-vc-SNA">
+                                <rect key="frame" x="87" y="98" width="240" height="41"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -210,6 +211,8 @@
                             <constraint firstItem="0VO-eC-8Rw" firstAttribute="leading" secondItem="3JD-wV-vq5" secondAttribute="leading" id="X5G-Xl-qCP"/>
                             <constraint firstItem="LYx-Gc-Tgp" firstAttribute="bottom" secondItem="Nxb-ei-xI0" secondAttribute="bottom" id="ZhD-8v-ryI"/>
                             <constraint firstItem="yhk-rs-GbA" firstAttribute="top" secondItem="tnY-vM-f5V" secondAttribute="top" id="b6j-bD-SMB"/>
+                            <constraint firstItem="LPp-vc-SNA" firstAttribute="top" secondItem="bRr-ep-tTX" secondAttribute="top" constant="54" id="bXG-wD-heJ"/>
+                            <constraint firstItem="LPp-vc-SNA" firstAttribute="centerX" secondItem="Sgo-JW-Oe9" secondAttribute="centerX" id="cqX-0Y-7X2"/>
                             <constraint firstItem="yhk-rs-GbA" firstAttribute="leading" secondItem="tnY-vM-f5V" secondAttribute="trailing" constant="10" id="dfq-nC-a6h"/>
                             <constraint firstItem="D40-Vu-46U" firstAttribute="leading" secondItem="bRr-ep-tTX" secondAttribute="leading" constant="10" id="fPl-VL-sbg"/>
                             <constraint firstItem="LYx-Gc-Tgp" firstAttribute="trailing" secondItem="3JD-wV-vq5" secondAttribute="trailing" id="fuo-Bu-on0"/>
@@ -222,7 +225,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bRr-ep-tTX"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="LZ1-cD-JT4"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="paperplane" catalog="system" id="LZ1-cD-JT4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="message" destination="tnY-vM-f5V" id="kEL-Ck-Kuz"/>
@@ -239,4 +242,8 @@
             <point key="canvasLocation" x="-33.333333333333336" y="144.64285714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo-13" width="240" height="41"/>
+        <image name="paperplane" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
