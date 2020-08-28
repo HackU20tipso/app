@@ -16,6 +16,7 @@ struct A_struct {
     var point: Int
     var password: String
 }
+
 class AppUser {
     
     var isEmpty2 : String = ""
@@ -57,6 +58,7 @@ class AppUser {
         userPoint = 0
     }
     
+    //名前とパスワードが一致する人がいるかどうか -> true
     func isMatch(name: String, password: String, complete: @escaping (Bool) -> Void) -> Bool{
         
         let _: Void = db.collection("AccountData").whereField("name", isEqualTo: name).whereField("password", isEqualTo: password)
