@@ -10,15 +10,16 @@ import UIKit
 let sectionTitle = ["情報系","心理系","食物系"]
 
 // セルに表示するデータ
-let section0 = [
+var section0:[(String,String)] = []
+/*var section0 = [
     (name:"アップル", url:"https://www.apple.com/jp/"),
     (name:"国立天文台", url:"https://www.nao.ac.jp"),
     (name:"東京都美術館", url:"http://www.tobikan.jp"),
     (name:"amazon", url:"https://www.amazon.co.jp")
-]
-let section1 = [(name:"本", url:"https://docs.google.com/forms/d/1z9r11-QxxvSV96fvThVZQjGmpFaEvqim7Lt2pGcPUZA/edit#responses")]
+]*/
+var section1 = [(name:"本", url:"https://docs.google.com/forms/d/1z9r11-QxxvSV96fvThVZQjGmpFaEvqim7Lt2pGcPUZA/edit#responses")]
 
-let section2 = [(name:"o-tips", url:"https://docs.google.com/forms/d/1qfWWtPXuKnJHg1XWiu3qX9pHXx1BsE-LL--MR57p0Jk/edit")]
+var section2 = [(name:"o-tips", url:"https://docs.google.com/forms/d/1qfWWtPXuKnJHg1XWiu3qX9pHXx1BsE-LL--MR57p0Jk/edit")]
 
 let tableData = [section0,section1,section2]
 
@@ -81,11 +82,28 @@ class WebListTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let test1 = QuestionnareData()
-        test1.makeQ(a: "男性",b: "情報系",c: "19",d: "google.com")
+        test1.makeQ(a: "男性",b: "心理系",c: "19",d: "google.com")
+        test1.makeQ(a: "女性",b: "心理系",c: "19",d: "google.com")
         //var test2 = Q_struct(target: "男性", category: "情報系", age: "19", url: "google.com")
-        test1.getAllReports(completion: { questions in print("test1 is \(questions)")})
-
+        test1.getAllReports(completion: {
+            //配列中身print
+            questions in print("test1[2] is \(test1.questions[2])")})
+        //print("all count \(test1.questions.count)")
+        
+        if(test1.questions[1].category == "情報系"){        section0.append((name: test1.questions[1].gender, url: test1.questions[1].url))
+        }
+        if(test1.questions[1].category == "心理系"){        section1.append((name: test1.questions[1].gender, url: test1.questions[1].url))
+        }
+        if(test1.questions[1].category == "食物系"){        section2.append((name: test1.questions[1].gender, url: test1.questions[1].url))
+        }
     }
-
-    
 }
+
+//OutofRangeをチェックできる...のか...？
+extension Array {
+    subscript (safe index: Index) -> Element? {
+        //indexが配列内なら要素を返し、配列外ならnilを返す（三項演算子）
+        return indices.contains(index) ? self[index] : nil
+    }
+}
+
