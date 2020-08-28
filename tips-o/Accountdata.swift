@@ -113,6 +113,31 @@ class AppUser : NSObject {
     }
     
     
+    //名前とパスワードから,年齢と性別を取得
+    func get_age_gender(name: String, password: String, complete: @escaping(String, String) -> ()){
+        
+        let _: Void = db.collection("AccountData").whereField("name", isEqualTo: name).whereField("password", isEqualTo: password)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    
+                    var age : String = ""
+                    var gender : String = ""
+                    
+                    for document in querySnapshot!.documents {
+                        
+                        age = document.get("age") as! String
+                        gender = document.get("gender") as! String
+                        print("\(document.documentID) => \(document.data())")
+                        
+                    }
+                    complete(age, gender)
+                }
+        }
+    }
+    
+    
     /*
      func getMedicinesName() -> [String] {
      var medicines = [String]()
