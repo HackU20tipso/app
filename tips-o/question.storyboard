@@ -164,7 +164,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="themeEnd:" destination="iVQ-ye-mgd" eventType="editingDidEndOnExit" id="JLp-re-6tX"/>
+                                    <action selector="labelEnd:" destination="iVQ-ye-mgd" eventType="editingDidEndOnExit" id="CRR-qf-PN1"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnY-vM-f5V">
@@ -228,10 +228,10 @@
                     <tabBarItem key="tabBarItem" title="Post" image="paperplane" catalog="system" id="LZ1-cD-JT4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="label" destination="tnY-vM-f5V" id="8AH-0m-Mdy"/>
+                        <outlet property="label" destination="tnY-vM-f5V" id="5hJ-tK-onn"/>
                         <outlet property="quesLabel" destination="c0n-Bv-aDV" id="kEh-gS-xam"/>
                         <outlet property="targetpick" destination="UsR-gM-ejz" id="eeP-HJ-qD2"/>
-                        <outlet property="theme" destination="Qwy-7h-1Lf" id="pzh-sX-hQ8"/>
+                        <outlet property="theme" destination="Qwy-7h-1Lf" id="Fzn-gT-k3d"/>
                         <outlet property="themepick" destination="0VO-eC-8Rw" id="3hL-dD-1AY"/>
                         <outlet property="typepick" destination="LYx-Gc-Tgp" id="eIp-HO-7yY"/>
                         <outlet property="urlTextField" destination="3JD-wV-vq5" id="oaP-bH-ryC"/>
