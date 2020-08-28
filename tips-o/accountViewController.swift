@@ -13,9 +13,10 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     
     @IBOutlet weak var quateLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var ageTextField: UITextField!
-    @IBOutlet weak var belongTextField: UITextField!
-    @IBOutlet weak var fromTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    //@IBOutlet weak var ageTextField: UITextField!
+    //@IBOutlet weak var belongTextField: UITextField!
+    //@IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var agePickerView: UIPickerView!
     @IBOutlet weak var genderPickerView: UIPickerView!
     @IBOutlet weak var belongPickerView: UIPickerView!
@@ -75,12 +76,13 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         guard let genderAuther = gender, !ageAuther.isEmpty else {return}
         guard let belongAuther = belong, !belongAuther.isEmpty else {return}
         guard let fromAuther = from, !fromAuther.isEmpty else {return}
+        guard let passwordText = passwordTextField.text, !passwordText.isEmpty else {return}
         
         let me = AppUser()
         
         //追加
         
-        me.setAccount(name: nameText, age: ageAuther, gender: genderAuther, belong: belongAuther, from: fromAuther, point: 0, completion:
+        me.setAccount(name: nameText, age: ageAuther, gender: genderAuther, belong: belongAuther, from: fromAuther, point: 0, password : passwordText, completion:
             { isSuccess in print("\(isSuccess)")})
         
         print("いけた!!!!")

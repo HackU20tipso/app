@@ -161,6 +161,19 @@
                                     <action selector="nameTag:" destination="bCf-QD-7Tb" eventType="editingDidEndOnExit" id="pyi-uj-0p9"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHz-zw-vJ8">
+                                <rect key="frame" x="10" y="520" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gdr-6O-Qpn">
+                                <rect key="frame" x="194" y="513" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -209,6 +222,7 @@
                         <outlet property="fromPickerView" destination="BZf-Gy-vYn" id="DwM-bf-QNM"/>
                         <outlet property="genderPickerView" destination="2M2-YC-uN5" id="ZYi-UG-vd8"/>
                         <outlet property="nameTextField" destination="PJC-Oa-1xb" id="k3b-b1-fne"/>
+                        <outlet property="passwordTextField" destination="Gdr-6O-Qpn" id="u91-Dp-aOz"/>
                         <outlet property="quateLabel" destination="K0f-tv-6Xf" id="NkM-u8-E4p"/>
                     </connections>
                 </viewController>
