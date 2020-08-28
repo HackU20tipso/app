@@ -92,13 +92,24 @@ class WebListTableTableViewController: UITableViewController {
         //test1.makeQ(a: "男性",b: "心理系",c: "19",d: "google.com")
         //test1.makeQ(a: "女性",b: "心理系",c: "19",d: "google.com")
         
+        let me = AppUser()
+        
+        /*let gender_age = me.getPrivacy(
+            name: self.fromAppDelegate.ThisUsername,
+            password: self.fromAppDelegate.Thispassword, complete:{result in
+            var arg_gender : String =
+            var arg_age : String =
+        })*/
+
+        
+        //仮置きのプロフィール
         let arg_gender = "男性"
         let arg_age = "10代"
-        let arg_category = "心理系"
         
+        //append test
         section1.append((name: "test", url: "test.com"))
         
-        let result = Questionnare.getAllReports(gender: arg_gender, age: arg_age, category: arg_category, completion: {
+        let result = Questionnare.getAllReports(gender: arg_gender, age: arg_age, completion: {
             questions in
             if(Questionnare.questions[safe: 3] != nil){
                 print("1OutofRange大丈夫！")
@@ -107,15 +118,17 @@ class WebListTableTableViewController: UITableViewController {
             }
             if(Questionnare.questions[3].category == "情報系"){
                 print("\(Questionnare.questions[3].category)")
-                section0.append((name: Questionnare.questions[3].title, url: Questionnare.questions[3].url))
+                section0.append((name: Questionnare.questions[3].theme, url: Questionnare.questions[3].url))
             }
             else if(Questionnare.questions[3].category == "心理系"){
-                print("\(Questionnare.questions[3].category)")
-                section1.append((name: Questionnare.questions[3].title, url: Questionnare.questions[3].url))
+                section1.append((name: "test", url: "test.com"))
+                print("[3]\(Questionnare.questions[3].category)")
+                section1.append((name: "test", url: "test.com"))
+                section1.append((name: Questionnare.questions[3].theme, url: Questionnare.questions[3].url))
             }
             else if(Questionnare.questions[3].category == "食物系"){
                 print("\(Questionnare.questions[3].category)")
-                section2.append((name: Questionnare.questions[3].title, url: Questionnare.questions[3].url))
+                section2.append((name: Questionnare.questions[3].theme, url: Questionnare.questions[3].url))
             }
             else{
                 print("else! \(Questionnare.questions[3].category)")
@@ -123,7 +136,9 @@ class WebListTableTableViewController: UITableViewController {
             for Qs in Questionnare.questions {
                 if(Qs.category == "情報系"){        section0.append((name: Qs.gender, url: Qs.url))
                 }
-                if(Qs.category == "心理系"){        section1.append((name: Qs.gender, url: Qs.url))
+                if(Qs.category == "心理系"){
+                    print("\(Qs.category), \(Qs.gender), \(Qs.url)")
+                    section1.append((name: Qs.gender, url: Qs.url))
                 }
                 if(Qs.category == "食物系"){        section2.append((name: Qs.gender, url: Qs.url))
                 }
@@ -138,16 +153,6 @@ class WebListTableTableViewController: UITableViewController {
         }else{
             print("2OutofRange大丈夫じゃない")
         }
-        
-        /*for Qs in result {
-            if(Qs.category == "情報系"){        section0.append((name: Qs.gender, url: Qs.url))
-            }
-            if(Qs.category == "心理系"){        section1.append((name: Qs.gender, url: Qs.url))
-            }
-            if(Qs.category == "食物系"){        section2.append((name: Qs.gender, url: Qs.url))
-            }
-        }*/
-        
     }
 }
 
@@ -158,4 +163,5 @@ extension Array {
         return indices.contains(index) ? self[index] : nil
     }
 }
+
 
