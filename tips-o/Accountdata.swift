@@ -5,13 +5,46 @@ import FirebaseFirestore
 import GoogleSignIn
 import FirebaseAnalytics
 
+import Firebase
+
+
 class AppUser {
     
     var userPoint: Int?
+    var nameText1 : String!
+    let ageAuther : String!
+    let genderAuther : String!
+    let belongAuther : String!
+    let fromAuther : String!
+    let db = Firestore.firestore()
+    let saveDocument = Firestore.firestore().collection("AccountData").document()
+    var userRef: DocumentReference!
+    var isSuccess = true
     
+    /*
     init(data: [String: Any]){
+        
+        nameText1 = data["name"] as? String
+        ageAuther = data["age"] as? String
+        genderAuther = data["gender"] as? String
+        belongAuther = data["belong"] as? String
+        fromAuther = data["from"] as? String
         userPoint = data["userPoint"] as? Int
+ 
     }
+ */
+ 
+    
+    init(){
+           nameText1 = ""
+           ageAuther = ""
+           genderAuther = ""
+           belongAuther = ""
+           fromAuther = ""
+           userPoint = 0
+       }
+ 
+    
     
     func Add_point(){
         if let x = userPoint{
@@ -23,31 +56,40 @@ class AppUser {
         }
     }
     
-   // let data = "a"
-
-    /*
-    var ref = Database.database().reference()
-    //var ref = Firestore.firestore().reference()
-    var age: Int?
-    var belong: String?
-    var from: String?
-    var gender: String?
-    var name: String?
-
-    init? (snapshot: DataSnapshot) {
-        ref = snapshot.ref
-        guard let dict = snapshot.value as? [String:Any] else { return nil }
-        guard let age  = dict["age"] as? Int  else { return nil }
-        guard let belong = dict["belong"]  as? String else { return nil }
-        guard let from = dict["from"]  as? String else { return nil }
-        guard let gender = dict["gender"]  as? String else { return nil }
-        guard let name = dict["name"]  as? String else { return nil }
-
-        self.age = age
-        self.belong = belong
-        self.from = from
-        self.gender = name
-        self.name = name
+    public func setAccount(/*authorRef: String,*/
+                           name: String,
+                           age: String,
+                           gender: String,
+                           belong: String,
+                           from: String,
+                           point: Int,
+                           completion: @escaping (Bool)->(Void)) {
+        self.getUserReference() { userRef in
+            self.userRef = userRef
+        }
+        saveDocument.setData([
+            //"authorRef": self.userRef as Any,
+            "name" : name/*self.nameText as Any*/,
+            "age" : age ,
+            "gender" : gender,
+            "belong" : belong,
+            "from" : from,
+            "point" : userPoint!
+            
+        ]) { error in
+            if error != nil {
+                fatalError("\(String(describing: error))")
+                self.isSuccess = false
+                completion(self.isSuccess)
+            }
+            completion(self.isSuccess)
+        }
     }
- */
+    
+    //private
+    public func getUserReference(completion: @escaping (DocumentReference)->()) {
+        let userRefString = db.collection("AccountData").document()
+        let userRef = db.document(userRefString.path)
+        completion(userRef)
+    }
 }

@@ -25,7 +25,7 @@ let tableData = [section0,section1,section2]
 class WebListTableTableViewController: UITableViewController {
     
     //var me : AppUser(data : ["UserPoint" : 0])
-    var me = AppUser (data : ["UserPoint" : 1])
+    //var me = AppUser (data : ["UserPoint" : 1])
     
   
     
@@ -66,7 +66,7 @@ class WebListTableTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // セグエがshowWebPageのときの処理
         if segue.identifier == "showWebPage" {
-            me.Add_point()
+           // me.Add_point()
             // タップした行番号を取り出す
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let sectionData = tableData[indexPath.section]
