@@ -84,22 +84,29 @@ class WebListTableTableViewController: UITableViewController {
         let test1 = QuestionnareData()
         test1.makeQ(a: "男性",b: "心理系",c: "19",d: "google.com")
         test1.makeQ(a: "女性",b: "心理系",c: "19",d: "google.com")
-        //var test2 = Q_struct(target: "男性", category: "情報系", age: "19", url: "google.com")
+        
         test1.getAllReports(completion: {
             //配列中身print
-            questions in print("test1[2] is \(test1.questions[2])")})
-        //print("all count \(test1.questions.count)")
+            questions in print("test1 is \(test1.questions)")})
         
-        if(test1.questions[1].category == "情報系"){        section0.append((name: test1.questions[1].gender, url: test1.questions[1].url))
+        print("２回目 test1 is \(test1.questions)")
+        
+        if(test1.questions[safe: 5] != nil){
+            print("OutofRange大丈夫")
+        }else{
+            print("OutofRange")
+        }
+        
+        /*if(test1.questions[1].category == "情報系"){        section0.append((name: test1.questions[1].gender, url: test1.questions[1].url))
         }
         if(test1.questions[1].category == "心理系"){        section1.append((name: test1.questions[1].gender, url: test1.questions[1].url))
         }
         if(test1.questions[1].category == "食物系"){        section2.append((name: test1.questions[1].gender, url: test1.questions[1].url))
-        }
+        }*/
     }
 }
 
-//OutofRangeをチェックできる...のか...？
+//OutofRangeをチェックできるやつ
 extension Array {
     subscript (safe index: Index) -> Element? {
         //indexが配列内なら要素を返し、配列外ならnilを返す（三項演算子）
