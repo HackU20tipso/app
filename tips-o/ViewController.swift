@@ -12,25 +12,28 @@ import FirebaseFirestore
 
 var db: Firestore!
 
-var ThisUserName : String!
-var ThisUserPassword : String!
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    
-    var me = AppUser()
     
     @IBOutlet weak var UserNameTextField: UITextField!
     @IBOutlet weak var UserIdTextField: UITextField!
     @IBOutlet weak var ErrorLabel: UILabel!
     
+    let me = AppUser()
     
     @IBAction func LoginButton(_ sender: Any) {
         
-        me.isMatch(name: UserNameTextField!.text ?? "", password: UserIdTextField.text!, complete:{result in
+        
+        self.me.isMatch(name: UserNameTextField!.text ?? "", password: UserIdTextField.text!, complete:{result in
             print("")
             if (result){
-                ThisUserName = self.UserNameTextField.text!
-                ThisUserPassword = self.UserIdTextField.text!
+                
+                self.fromAppDelegate.ThisUsername = self.UserNameTextField.text
+                
+                self.fromAppDelegate.Thispassword = self.UserIdTextField.text
+                
+                print(self.fromAppDelegate.Thispassword)
+                
                 // 移動先のビューコントローラを参照する
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "tabPage")
                 // トランジションの映像効果を指定する
@@ -42,12 +45,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             }
             else{
-                self.ErrorLabel.text! = "NameとIDが違います"
+                //self.ErrorLabel.text! = "NameとIDが違います"
             }})
     }
     
+    
+    let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(fromAppDelegate.globalVar)
+        fromAppDelegate.ThisUsername = "あは体験"
+        print(fromAppDelegate.ThisUsername)
+        fromAppDelegate.Thispassword = "うふ"
+        
         // Do any additional setup after loading the view.
         // [START setup]
         UserNameTextField.delegate = self
