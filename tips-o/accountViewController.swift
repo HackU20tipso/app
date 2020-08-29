@@ -149,12 +149,14 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
             
             
         }
-        
-        let _ = me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
+        var x = 2
+        if let msg = fromAppDelegate.ThisUsername{
+            let _ = me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
             print("みずきち\(result)")
-            
-            self.labelPoint.text = "現在のポイントは\(result)です"
+            x = result
+            self.labelPoint.text = "現在のポイントは\(x)です"
         })
+        }
         
         
         
