@@ -86,20 +86,13 @@ class WebListTableTableViewController: UITableViewController {
             //
             
                
-            self.me.getPath(name: self.fromAppDelegate.ThisUsername!, password: self.fromAppDelegate.Thispassword!, complete:{result in
-                print("きたこれ\(result)")
-                self.path = result
-            })
             
-            let _ = self.me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
-                print("みずきち\(result)")
-                self.Point = result
-                
-            })
-            /*
+            
+            print("ああああああああああああああああああああああああ\(path)")
+            
             me.heru_Point(curPoint : Point, diffPoint : 1, path : path)
             
-        */
+        
            // me.Add_point()
             // タップした行番号を取り出す
             if let indexPath = self.tableView.indexPathForSelectedRow {
@@ -118,6 +111,17 @@ class WebListTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.me.getPath(name: self.fromAppDelegate.ThisUsername!, password: self.fromAppDelegate.Thispassword!, complete:{result in
+            print("きたこれ\(result)しぱい")
+            
+            self.path = result
+        })
+        
+        let _ = self.me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
+            print("みずきち\(result)")
+            self.Point = result
+            
+        })
         
         print("ここです！！！！！")
         print(fromAppDelegate.ThisUsername)
