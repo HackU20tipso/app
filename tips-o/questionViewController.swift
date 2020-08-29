@@ -153,13 +153,33 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         
         self.docRef2 = Firestore.firestore().collection("QuestionnareData").document()
         
-        
+        /*
+         self.me.getPath(name: self.fromAppDelegate.ThisUsername!, password: self.fromAppDelegate.Thispassword!, complete:{result in
+              print("きたこれ\(result)しぱい")
+              
+              self.path = result
+          })
+          
+          let _ = self.me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
+              print("みずきち\(result)")
+              self.Point = result
+              
+          })
+          
+          print("ああああああああああああああああああああああああ\(path)")
+          
+         // me.heru_Point(curPoint : Point, diffPoint : -1, path : path)
+          
+         */
+         
         print("パスの取得")
         me.getPath(name: self.fromAppDelegate.ThisUsername!, password: self.fromAppDelegate.Thispassword!, complete:{result in
-            print("きたこれ\(result)")
+            print("きたこれ\(result)ああああああ")
             self.docID = result
+            print()
         })
         
+        print("あああああああああああああああああ成功\(docID)docID")
     }
     
     //キーボードしまう
