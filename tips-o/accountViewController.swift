@@ -119,7 +119,7 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         })
         
         
-      
+        
     }
     
     
@@ -140,6 +140,14 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         }
         if let msg2 = fromAppDelegate.Thispassword{
             passwordTextField.text = msg2
+            /*
+             func get_all(name: String, password: String, complete: @escaping(String, String, String, String) -> ()){*/
+            
+            let _ = me.get_all(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{(age, gender, belong, from) in
+                self.selectedPerson = [age , gender, belong ,from]
+            })
+            
+            
         }
         
         let _ = me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
