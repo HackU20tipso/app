@@ -64,9 +64,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
 
     
     @IBAction func saveTapped2(_ sender: Any) {
-        print("ここ\(currentPoint)")
-        guard let quesText = quesLabel.text, !quesText.isEmpty else {return}
-        print("ああ")
+        
         guard let urlAuther = urlTextField.text, !urlAuther.isEmpty else {return}
         guard let targetcategory = category, !targetcategory.isEmpty else {return}
         guard let targetgender = gender, !targetgender.isEmpty else {return}
@@ -76,8 +74,8 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         let DataToSave2 : [String: Any] = ["url" : urlAuther ,"target_age" : targetage, "target_category" : targetcategory, "target_gender" : targetgender ,"theme" : themetag]
         
         //ポイント3より大きかったらボタン押せる
-        print(self.currentPoint >= 0)
-        if(true){
+       
+        if(self.currentPoint >= 3){
             print("どうなってます...?")
             docRef2.setData(DataToSave2){ (error) in
                 if let error = error{
@@ -95,6 +93,9 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
                 
                 self.label.text = "現在のポイントは\(self.currentPoint)です"
             })
+        }
+        else{
+            self.label.text = "3ポイント以上必要です"
         }
     }
     
