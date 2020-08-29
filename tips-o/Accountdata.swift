@@ -137,6 +137,32 @@ class AppUser : NSObject {
         }
     }
     
+    //名前とパスワードから,年齢と性別と出身と所属の取得
+    func get_all(name: String, password: String, complete: @escaping(String, String, String, String) -> ()){
+        
+        let _: Void = db.collection("AccountData").whereField("name", isEqualTo: name).whereField("password", isEqualTo: password)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    
+                    var age : String = ""
+                    var gender : String = ""
+                    var belong : String = ""
+                    var from : String = ""
+                    
+                    for document in querySnapshot!.documents {
+                        
+                        age = document.get("age") as! String
+                        gender = document.get("gender") as! String
+                        print("\(document.documentID) => \(document.data())")
+                        
+                    }
+                    complete(age, gender, belong, from)
+                }
+        }
+    }
+    
     
     /*
      func getMedicinesName() -> [String] {

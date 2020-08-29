@@ -10,40 +10,29 @@ import FirebaseAnalytics
 
 class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
-    /* func print("\(ThisUserName as? String ?? "入ってないよ")")*/
+    let me = AppUser()
+    let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    /*
+     fromAppDelegate.ThisUsername
+     fromAppDelegate.Thispassword
+     */
+    
+    var str = "Swift"
     
     
+    /*func get_all(name: String, password: String, complete:*/
     
     
     
     @IBOutlet weak var quateLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    //@IBOutlet weak var ageTextField: UITextField!
-    //@IBOutlet weak var belongTextField: UITextField!
-    //@IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var agePickerView: UIPickerView!
     @IBOutlet weak var genderPickerView: UIPickerView!
     @IBOutlet weak var belongPickerView: UIPickerView!
     @IBOutlet weak var fromPickerView: UIPickerView!
-    
-    
-    let me = AppUser()
-
-    
-    /*
-    me.isMatch(name: "たなか", password: "そうた", complete:{result in
-    print("")
-    if (result){
-    print("正解")
-    }
-    else{
-    
-    }
-    })
- */
-    
-    
+    @IBOutlet weak var label: UILabel!
     
     
     
@@ -107,10 +96,6 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         guard let passwordText = passwordTextField.text, !passwordText.isEmpty else {return}
         
         
-        //save.isEnabled = (!me.isMatch(name: nameText, password: passwordText))
-        //save.isEnabled = (!me.isMatch(name: nameText, password: passwordText))
-        
-        // print("どうですか?\(!me.isMatch(name: nameText, password: passwordText, complete: {<#(Bool) -> Void#>))")
         
         me.isMatch(name: nameText, password: passwordText, complete:{result in
             print("")
@@ -135,19 +120,12 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         
         
         
-        //名前とパスワードが一致しているものが見つかったらもう一度
-        
-        //print("いけた!!!!")
-        
-        //me.Add_point()
-        //print("\(me.userPoint!)")
-        
-        
     }
     
-    let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var labelPoint: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,17 +135,28 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         //fromAppDelegate.Thispassword = "うふ"
         print(fromAppDelegate.Thispassword)
         
+        if let msg1 = fromAppDelegate.ThisUsername{
+            nameTextField.text = msg1
+        }
+        if let msg2 = fromAppDelegate.Thispassword{
+            passwordTextField.text = msg2
+            /*
+             func get_all(name: String, password: String, complete: @escaping(String, String, String, String) -> ()){*/
+            
+            let _ = me.get_all(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{(age, gender, belong, from) in
+                self.selectedPerson = [age , gender, belong ,from]
+            })
+            
+            
+        }
         
-        //docRef = Firestore.firestore().collection("AccountData").document()
-        /*
-         Firestore.firestore().collection("AccountData").document("EcAJ8QLDwFvCg5tPPK4w").getDocument { (snap, error) in
-         if let error = error {
-         fatalError("\(error)")
-         }
-         guard let data = snap?.data() else { return }
-         print(data)
-         //self.label.text = "\(data)"
-         */
+        let _ = me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
+            print("みずきち\(result)")
+            
+            self.labelPoint.text = "現在のポイントは\(result)です"
+        })
+        
+        
         
         
         //pickerの設定
