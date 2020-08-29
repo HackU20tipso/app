@@ -60,10 +60,11 @@
                                     <constraint firstAttribute="width" constant="100" id="swa-ns-8TU"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="テーマ">
+                                    <fragment content="カテゴリー">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -77,7 +78,7 @@
                                     <constraint firstAttribute="width" constant="100" id="tYV-dM-ngN"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="系統">
+                                    <fragment content="性別">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="17" name="HiraMaruProN-W4"/>
@@ -94,10 +95,11 @@
                                     <constraint firstAttribute="height" constant="50" id="uzu-Jh-p5a"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="ターゲット">
+                                    <fragment content="年代">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
