@@ -9,6 +9,11 @@
 import UIKit
 let sectionTitle = ["情報系","心理系","食物系"]
 
+struct Setdata{
+    var name: String
+    var url: String
+}
+
 // セルに表示するデータ
 //var section0:[(String,String)] = []
 var section0 = [
@@ -17,11 +22,13 @@ var section0 = [
     (name:"東京都美術館", url:"http://www.tobikan.jp"),
     (name:"amazon", url:"https://www.amazon.co.jp")
 ]
-var section1 = [(name:"本", url:"https://docs.google.com/forms/d/1z9r11-QxxvSV96fvThVZQjGmpFaEvqim7Lt2pGcPUZA/edit#responses")]
+var section1 = [
+    (name:"本", url:"https://docs.google.com/forms/d/1z9r11-QxxvSV96fvThVZQjGmpFaEvqim7Lt2pGcPUZA/edit#responses")]
 
-var section2 = [(name:"o-tips", url:"https://docs.google.com/forms/d/1qfWWtPXuKnJHg1XWiu3qX9pHXx1BsE-LL--MR57p0Jk/edit")]
+var section2 = [
+    (name:"o-tips", url:"https://docs.google.com/forms/d/1qfWWtPXuKnJHg1XWiu3qX9pHXx1BsE-LL--MR57p0Jk/edit")]
 
-let tableData = [section0,section1,section2]
+var tableData = [section0,section1,section2]
 
 
 
@@ -34,6 +41,7 @@ class WebListTableTableViewController: UITableViewController {
     let me = AppUser()
     
     // MARK: - Table view data source
+    
     // セクションの個数
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitle.count
@@ -78,7 +86,7 @@ class WebListTableTableViewController: UITableViewController {
                 // 行のデータを取り出す
                 let webData = sectionData[(indexPath as NSIndexPath).row]
                 // 移動先のビューコントローラのdataプロパティに値を設定する
-                (segue.destination as! answerViewController).data = webData
+                (segue.destination as! answerViewController).data = webData as! (name: String, url: String)
             }
         }
     }
@@ -89,7 +97,6 @@ class WebListTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         print("ここです！！！！！")
         print(fromAppDelegate.ThisUsername)
@@ -128,60 +135,60 @@ class WebListTableTableViewController: UITableViewController {
         func get_age_gender(name: String, password: String, complete: @escaping(String, String) -> ()){
         */
         
-        //append test (できる)
-        section1.append((name: "test", url: "test.com"))
         
-        let result = Questionnare.getAllReports(gender: arg_gender, age: arg_age, completion: {
+        
+        Questionnare.getAllReports(gender: arg_gender, age: arg_age, completion: {
             questions in
             if(Questionnare.questions[safe: 3] != nil){
                 print("1OutofRange大丈夫！")
             }else{
                 print("1OutofRange大丈夫じゃない")
             }
-            /*if(Questionnare.questions[3].category == "情報系"){
-                print("\(Questionnare.questions[3].category)")
-                section0.append((name: Questionnare.questions[3].theme, url: Questionnare.questions[3].url))
-            }
-            else if(Questionnare.questions[3].category == "心理系"){
-                //appendできない
-                section1.append((name: "test2", url: "test.com"))
-                //実行される
-                print("append[3]\(Questionnare.questions[3].category)")
-                print("append \(section1)")
-                section1.append((name: "test3", url: "test.com"))
-                section1.append((name: Questionnare.questions[3].theme, url: Questionnare.questions[3].url))
-            }
-            else if(Questionnare.questions[3].category == "食物系"){
-                print("\(Questionnare.questions[3].category)")
-                section2.append((name: Questionnare.questions[3].theme, url: Questionnare.questions[3].url))
-            }
-            else{
-                print("else! \(Questionnare.questions[3].category)")
-            }*/
+            
+            /*func Section(completion: (Questionnare.questions) -> Void)
+            
+            let ret = Section(Q: Questionnare.questions, completion: {*/
+                
+            
             for Qs in Questionnare.questions {
                 if(Qs.category == "情報系"){
-                    section0.append((name: Qs.gender, url: Qs.url))
+                    section0.append((name: Qs.theme, url: Qs.url))
                 }
-                if(Qs.category == "心理系"){
-                    print("\(Qs.category), \(Qs.gender), \(Qs.url)")
-                    section1.append((name: Qs.gender, url: Qs.url))
+                else if(Qs.category == "心理系"){
+                    print("いい感じ！！！")
+                    print("\(Qs.category), \(Qs.theme), \(Qs.url)")
+                    section1.append((name: Qs.theme, url: Qs.url))
+                    print(section1)
                 }
-                if(Qs.category == "食物系"){
-                    section2.append((name: Qs.gender, url: Qs.url))
+                else if(Qs.category == "食物系"){
+                    section2.append((name: Qs.theme, url: Qs.url))
+                }
+                else {
+                    print("elseだよ〜")
                 }
             }
+            
+            tableData = [section0,section1,section2]
+            
+            self.tableView.reloadData()
+            
+            print(self.tableView as Any)
+            
+            // テーブルのセルを参照する
+            //append test (できる)
+            //section1.append((name: "test", url: "test.com"))
             
             
             //配列中身print
              print("２回目 \(Questionnare.questions)")})
         
-        print("１回目 \(result)")
+        //print("１回目 \(result)")
         
-        if(result[safe: 3] != nil){
+        /*if(result[safe: 3] != nil){
             print("2OutofRange大丈夫！")
         }else{
             print("2OutofRange大丈夫じゃない")
-        }
+        }*/
     }
 }
 

@@ -27,7 +27,7 @@ class QuestionnareData {
     //genderとageをとってくる
     
     //urlとthemeゲットする
-    public func getAllReports(gender: String, age: String, completion: @escaping ([Q_struct])->()) -> [Q_struct] {
+    public func getAllReports(gender: String, age: String, completion: @escaping ([Q_struct])->()) -> (Void) {
         var result = [Q_struct]()
         let reportDocRef = db.collection("QuestionnareData").whereField("target_gender", isEqualTo: gender).whereField("target_age", isEqualTo: age)
         reportDocRef.getDocuments() { (querySnapshot, err) in
@@ -49,8 +49,6 @@ class QuestionnareData {
             }
             
         }
-        
-        return result
     }
 }
 
