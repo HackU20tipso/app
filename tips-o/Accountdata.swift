@@ -216,10 +216,10 @@ class AppUser : NSObject {
     //3ポイント減る
     func heru_Point(curPoint : Int, diffPoint : Int, path : String){
         var update_Point = curPoint + diffPoint
-        let myRef = db.collection("AccountData").document(path)
+        //let myRef = db.collection("AccountData").document(path)
         
         // Set the "capital" field of the city 'DC'
-        myRef.updateData([
+        db.collection("AccountData").document(path).updateData([
             "point": update_Point
         ]) { err in
             if let err = err {

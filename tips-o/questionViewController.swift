@@ -88,11 +88,14 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
             
             self.me.heru_Point(curPoint : currentPoint, diffPoint : -3, path : docID)
             
+            var x : Int = 0
             let _ = self.me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
                 print("みずきち\(result)")
-                
+                self.currentPoint = result
                 self.label.text = "現在のポイントは\(self.currentPoint)です"
+                x = self.currentPoint
             })
+            
         }
         else{
             self.label.text = "3ポイント以上必要です"

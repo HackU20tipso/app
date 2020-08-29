@@ -35,6 +35,10 @@ var tableData = [section0,section1,section2]
 
 class WebListTableTableViewController: UITableViewController {
     
+    var path : String = ""
+    var Point : Int = 0
+
+    
     //var me : AppUser(data : ["UserPoint" : 0])
     //var me = AppUser (data : ["UserPoint" : 1])
     
@@ -79,6 +83,23 @@ class WebListTableTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // セグエがshowWebPageのときの処理
         if segue.identifier == "showWebPage" {
+            //
+            
+               
+            self.me.getPath(name: self.fromAppDelegate.ThisUsername!, password: self.fromAppDelegate.Thispassword!, complete:{result in
+                print("きたこれ\(result)")
+                self.path = result
+            })
+            
+            let _ = self.me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
+                print("みずきち\(result)")
+                self.Point = result
+                
+            })
+            /*
+            me.heru_Point(curPoint : Point, diffPoint : 1, path : path)
+            
+        */
            // me.Add_point()
             // タップした行番号を取り出す
             if let indexPath = self.tableView.indexPathForSelectedRow {
