@@ -32,7 +32,7 @@ class answerViewController: UIViewController {
         //fromAppDelegate.Thispassword = "うふ"
         print(fromAppDelegate.Thispassword)
          
-        let da = "ab"
+        
         // dataが設定されていればwebDataに代入する
         guard let webData = data else {
             return
