@@ -9,7 +9,7 @@
 
 ## git switch masterできない時
 
-1. git stashする(?)
+1. git stashする
 
 ## storyboardを追加する時
 
@@ -27,5 +27,5 @@
       git pull
 8. 今まで使っていたブランチを消す&ブランチを作る
     git switch -c 新しいブランチ
-    git branch  -d 古いブランチ
+    git branch -d 古いブランチ
 
