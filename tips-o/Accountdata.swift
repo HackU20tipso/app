@@ -228,20 +228,9 @@ class AppUser : NSObject {
                 print("Document successfully updated")
             }
         }
+        print("ポイント変化したよ")
+        print(update_Point);
     }
-    
-    //ポイント更新
-    /*
-    func Add_point(){
-        if let x = userPoint{
-            userPoint! = 1 + x
-            print("ば７\(userPoint!)\(x)")
-        }
-        else{
-            print("ポイントを更新できませんでした")
-        }
-    }
- */
     
     
     public func setAccount(/*authorRef: String,*/

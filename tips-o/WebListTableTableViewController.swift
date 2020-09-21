@@ -17,7 +17,7 @@ struct Setdata{
 // セルに表示するデータ
 //var section0:[(String,String)] = []
 var section0 = [
-    (name:"アップル", url:"https://www.apple.com/jp/"),
+    (name:"猫", url:"https://docs.google.com/forms/d/e/1FAIpQLSf7MIwI54xkdPIg9cDZ1lnYH-6mPRwstjgvqZWkvUjf-vy22g/viewform?usp=pp_url&entry.204507780=%E5%A5%BD%E3%81%8D%E3%81%A7%E3%81%99"),
     (name:"国立天文台", url:"https://www.nao.ac.jp"),
     (name:"東京都美術館", url:"http://www.tobikan.jp"),
     (name:"amazon", url:"https://www.amazon.co.jp")
@@ -84,15 +84,10 @@ class WebListTableTableViewController: UITableViewController {
         // セグエがshowWebPageのときの処理
         if segue.identifier == "showWebPage" {
             //
-            
-               
-            
-            
             print("ああああああああああああああああああああああああ\(path)")
             
             me.heru_Point(curPoint : Point, diffPoint : 1, path : path)
             
-        
            // me.Add_point()
             // タップした行番号を取り出す
             if let indexPath = self.tableView.indexPathForSelectedRow {

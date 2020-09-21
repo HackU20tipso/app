@@ -10,19 +10,14 @@ import FirebaseAnalytics
 
 class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
+    //ログインしているユーザー
     let me = AppUser()
     let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    /*
-     fromAppDelegate.ThisUsername
-     fromAppDelegate.Thispassword
-     */
     
     var str = "Swift"
     
     
     /*func get_all(name: String, password: String, complete:*/
-    
     
     
     @IBOutlet weak var quateLabel: UILabel!
@@ -33,7 +28,6 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBOutlet weak var belongPickerView: UIPickerView!
     @IBOutlet weak var fromPickerView: UIPickerView!
     @IBOutlet weak var label: UILabel!
-    
     
     
     var twoDimArray = [[String]]()
@@ -158,8 +152,74 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         })
         }
         
+        var this_age : String
+        
+        if let msg = fromAppDelegate.ThisUsername{
+            let _ = me.get_age_gender(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{(result1, result2)  in
+            print("みずきち\(result1)")
+            //this_age = result1
+            self.labelPoint.text = "年齢は\(result1)です"
+        })
+        }
+        
+        //pickerの設定
+        for _ in 0 ... 3{
+            twoDimArray.append([])
+        }
+        
+        agePickerView.tag = 0
+        genderPickerView.tag = 1
+        belongPickerView.tag = 2
+        fromPickerView.tag = 3
+        
+        twoDimArray[0] = ["10代","20代","30代","40代","それ以上"]
+        twoDimArray[1] = ["女性","男性","どちらでもない"]
+        twoDimArray[2] = ["中高生","大学生","大学院生","社会人"]
+        twoDimArray[3] = ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
         
         
+        selectedPerson = ["","","",""]
+        
+        agePickerView.delegate = self
+        agePickerView.dataSource = self
+        genderPickerView.delegate = self
+        genderPickerView.dataSource = self
+        belongPickerView.delegate = self
+        belongPickerView.dataSource = self
+        fromPickerView.delegate = self
+        fromPickerView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //super.viewWillLoad()
+        
+        print("ここです！！！！！")
+        print(fromAppDelegate.ThisUsername)
+        //fromAppDelegate.Thispassword = "うふ"
+        print(fromAppDelegate.Thispassword)
+        
+        if let msg1 = fromAppDelegate.ThisUsername{
+            nameTextField.text = msg1
+        }
+        if let msg2 = fromAppDelegate.Thispassword{
+            passwordTextField.text = msg2
+            /*
+             func get_all(name: String, password: String, complete: @escaping(String, String, String, String) -> ()){*/
+            
+            let _ = me.get_all(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{(age, gender, belong, from) in
+                self.selectedPerson = [age , gender, belong ,from]
+            })
+            
+            
+        }
+        var x = 2
+        if let msg = fromAppDelegate.ThisUsername{
+            let _ = me.getPoint(name: self.fromAppDelegate.ThisUsername, password: self.fromAppDelegate.Thispassword, complete:{result in
+            print("みずきち\(result)")
+            x = result
+            self.labelPoint.text = "現在のポイントは\(x)です"
+        })
+        }
         
         //pickerの設定
         for _ in 0 ... 3{
