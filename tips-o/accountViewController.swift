@@ -193,7 +193,7 @@ class accountViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     override func viewWillAppear(_ animated: Bool) {
         //super.viewWillLoad()
         
-        print("ここです！！！！！")
+        print("ここですよ！！！！！")
         print(fromAppDelegate.ThisUsername)
         //fromAppDelegate.Thispassword = "うふ"
         print(fromAppDelegate.Thispassword)
