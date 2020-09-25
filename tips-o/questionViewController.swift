@@ -118,7 +118,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         print("\(self.me.x)")
         
         print(self.userpath)
-        
+        print("点数＾＾ \(self.currentPoint)")
         self.label.text = "現在のポイントは\(self.currentPoint)です"
         
         print("あああああああああああああああああああ")
