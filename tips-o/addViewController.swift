@@ -10,7 +10,7 @@ import UIKit
 
 // テーブルビューに表示するデータ
 let qsectionTitle = ["投稿済みのアンケート"]
-var qsection0 = [("キタテハ","タテハチョウ科")]
+var qsection0 = [("いぬ","https://docs.google.com/forms/d/e/1FAIpQLSf7MIwI54xkdPIg9cDZ1lnYH-6mPRwstjgvqZWkvUjf-vy22g/viewform?usp=pp_url&entry.204507780=%E3%81%99%E3%81%94%E3%81%8F%E5%A5%BD%E3%81%8D%E3%81%A7%E3%81%99")]
 let qtableData = [qsection0]
 
 class addViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

@@ -44,6 +44,75 @@ class answerViewController: UIViewController {
     }
     
    
+    @IBSegueAction func get_Point(_ coder: NSCoder) -> WebListTableTableViewController {
+        
+        // アラートを作る
+        
+               let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+               alert.title = "1ポイント獲得！！！！"
+               //alert.message = "3ポイント消費しました"
+               
+               // ボタン1
+               alert.addAction(
+                   UIAlertAction(
+                       title: "OK",
+                       style: .default,
+                       handler: {(action) -> Void in
+                           self.hello(action.title!)
+                   })
+               )
+        // アラートを表示する
+               self.present(
+                   alert,
+                   animated: true,
+                   completion: {
+                       // 表示完了後に実行
+                       print("アラートが表示された")
+               }
+               )
+ 
+ 
+ 
+        return WebListTableTableViewController
+        
+    }
+    
+    /*
+    @IBAction func getPoint(_ sender: Any) {
+        // アラートを作る
+        
+               let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+               alert.title = "1ポイント獲得！！！！"
+               //alert.message = "3ポイント消費しました"
+               
+               // ボタン1
+               alert.addAction(
+                   UIAlertAction(
+                       title: "OK",
+                       style: .default,
+                       handler: {(action) -> Void in
+                           self.hello(action.title!)
+                   })
+               )
+        // アラートを表示する
+               self.present(
+                   alert,
+                   animated: true,
+                   completion: {
+                       // 表示完了後に実行
+                       print("アラートが表示された")
+               }
+               )
+ 
+ 
+ 
+    }
+ */
+    
+    // 選択で実行するメソッド
+    func hello(_ msg:String) {
+        print(msg)
+    }
     
     /*
      // MARK: - Navigation

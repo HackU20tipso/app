@@ -82,8 +82,8 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         if(self.currentPoint >= 3){
             // アラートを作る
                    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-                   alert.title = "タイトル"
-                   alert.message = "メッセージ文"
+                   alert.title = "投稿完了！"
+                   alert.message = "3ポイント消費しました"
                    
                    // ボタン1
                    alert.addAction(
@@ -125,6 +125,30 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
             
         }
         else{
+            // アラートを作る
+                   let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+                   alert.title = "投稿には3ポイント以上必要です"
+                   //alert.message = "3ポイント消費しました"
+                   
+                   // ボタン1
+                   alert.addAction(
+                       UIAlertAction(
+                           title: "OK",
+                           style: .default,
+                           handler: {(action) -> Void in
+                               self.hello(action.title!)
+                       })
+                   )
+            // アラートを表示する
+                   self.present(
+                       alert,
+                       animated: true,
+                       completion: {
+                           // 表示完了後に実行
+                           print("アラートが表示された")
+                   }
+                   )
+            
             self.label.text = "3ポイント以上必要です"
         }
     }
