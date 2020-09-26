@@ -1,10 +1,4 @@
-//
-//  answerViewController.swift
-//  tips-o
-//
-//  Created by 百塚真弥 on 2020/08/24.
-//  Copyright © 2020 百塚真弥. All rights reserved.
-//
+
 
 import UIKit
 import Firebase

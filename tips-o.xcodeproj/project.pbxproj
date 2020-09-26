@@ -12,6 +12,7 @@
 		6C8C284C251E38F9009DC234 /* questionnarelist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8C284B251E38F9009DC234 /* questionnarelist.storyboard */; };
 		6CA60E0C251E484E00A69C0A /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA60E0B251E484E00A69C0A /* addViewController.swift */; };
 		6CA60E0F251E4B1700A69C0A /* addlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA60E0E251E4B1700A69C0A /* addlistViewController.swift */; };
+		6CA60E12251EE10800A69C0A /* qlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA60E11251EE10800A69C0A /* qlistTableViewController.swift */; };
 		6CB4308624F2CD2100A861C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4308524F2CD2100A861C0 /* AppDelegate.swift */; };
 		6CB4308824F2CD2100A861C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4308724F2CD2100A861C0 /* SceneDelegate.swift */; };
 		6CB4308A24F2CD2100A861C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4308924F2CD2100A861C0 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		6C8C284B251E38F9009DC234 /* questionnarelist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = questionnarelist.storyboard; sourceTree = "<group>"; };
 		6CA60E0B251E484E00A69C0A /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		6CA60E0E251E4B1700A69C0A /* addlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addlistViewController.swift; sourceTree = "<group>"; };
+		6CA60E11251EE10800A69C0A /* qlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qlistTableViewController.swift; sourceTree = "<group>"; };
 		6CB4308224F2CD2100A861C0 /* tips-o.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tips-o.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB4308524F2CD2100A861C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CB4308724F2CD2100A861C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				C9DB20FA24F69B0300177BA9 /* WebListTableTableViewController.swift */,
 				030F9CB324F3FAB500F3BA8D /* question.storyboard */,
 				6C8C284B251E38F9009DC234 /* questionnarelist.storyboard */,
+				6CA60E11251EE10800A69C0A /* qlistTableViewController.swift */,
 				6CA60E0B251E484E00A69C0A /* addViewController.swift */,
 				6CA60E0E251E4B1700A69C0A /* addlistViewController.swift */,
 			);
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA60E12251EE10800A69C0A /* qlistTableViewController.swift in Sources */,
 				6CF9BEC024F4D856006C1A4C /* loginViewController.swift in Sources */,
 				6CF8296224F74A55007890DF /* Accountdata.swift in Sources */,
 				C9DB20FB24F69B0300177BA9 /* WebListTableTableViewController.swift in Sources */,
