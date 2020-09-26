@@ -1,20 +1,17 @@
-
-
+//  AddController.swift
 import UIKit
-import Firebase
-import FirebaseCore
-import FirebaseFirestore
 import WebKit
 
+//変数の設置
+var TodoKobetsunonakami = [String]()
 
+class addViewController: UIViewController {
 
-class answerViewController: UIViewController {
-    
-    
-    @IBOutlet var webView: WKWebView!
+    //@IBOutlet var webView: WKWebView!
     
     // シーン移動の際に設定されるWebデータ
     var data:(name:String, url:String)?
+    @IBOutlet var webVIew2: WKWebView!
     
     let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -39,7 +36,8 @@ class answerViewController: UIViewController {
         let myRequest = URLRequest(url: myURL!)
         print(myRequest)
         // Webを読み込む
-        webView.load(myRequest)
+        
+        //webView.load(myRequest)
         
     }
     
