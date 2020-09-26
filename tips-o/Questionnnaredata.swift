@@ -11,6 +11,8 @@ struct Q_struct {
     var category: String
     var age: String
     var url: String
+    var username : String
+    var userid : String
 }
 
 class QuestionnareData {
@@ -20,8 +22,8 @@ class QuestionnareData {
     let db = Firestore.firestore()
     //questions.append(Q_struct(gender: "男性", category: "情報系", age: "19", url: "google.com"))
     
-    func makeQ(a: String, b: String, c: String, d: String){
-        self.questions.append(Q_struct(theme: a, gender: a, category: b, age: c, url: d))
+    func makeQ(a: String, b: String, c: String, d: String, e: String, f: String){
+        self.questions.append(Q_struct(theme: a, gender: a, category: b, age: c, url: d, username: e, userid: f))
     }
     
     //genderとageをとってくる
@@ -35,7 +37,7 @@ class QuestionnareData {
                 //var questions: [Q_struct]()
                 for document in querySnapshot.documents {
                     let data = document.data()
-                    let question = Q_struct(theme:data["theme"] as? String ?? "", gender: data["target_gender"] as? String ?? "", category: data["target_category"] as? String ?? "", age: data["target_age"] as? String ?? "", url: data["url"] as? String ?? "")
+                    let question = Q_struct(theme:data["theme"] as? String ?? "", gender: data["target_gender"] as? String ?? "", category: data["target_category"] as? String ?? "", age: data["target_age"] as? String ?? "", url: data["url"] as? String ?? "", username:data["userrname"] as? String ?? "",userid:data["userid"] as? String ?? "")
                     self.questions.append(question)
                     //要素数
                     print("\(self.questions.count) ")
