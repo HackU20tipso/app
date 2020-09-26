@@ -67,6 +67,7 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     
     @IBAction func saveTapped2(_ sender: Any) {
         
+
         guard let urlAuther = urlTextField.text, !urlAuther.isEmpty else {return}
         guard let targetcategory = category, !targetcategory.isEmpty else {return}
         guard let targetgender = gender, !targetgender.isEmpty else {return}
@@ -79,6 +80,29 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         //ポイント3より大きかったらボタン押せる
        
         if(self.currentPoint >= 3){
+            // アラートを作る
+                   let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+                   alert.title = "タイトル"
+                   alert.message = "メッセージ文"
+                   
+                   // ボタン1
+                   alert.addAction(
+                       UIAlertAction(
+                           title: "OK",
+                           style: .default,
+                           handler: {(action) -> Void in
+                               self.hello(action.title!)
+                       })
+                   )
+            // アラートを表示する
+                   self.present(
+                       alert,
+                       animated: true,
+                       completion: {
+                           // 表示完了後に実行
+                           print("アラートが表示された")
+                   }
+                   )
             print("どうなってます...?")
             docRef2.setData(DataToSave2){ (error) in
                 if let error = error{
@@ -105,6 +129,11 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         }
     }
     
+    // 選択で実行するメソッド
+    func hello(_ msg:String) {
+        print(msg)
+    }
+
     
     
     override func viewDidLoad() {
