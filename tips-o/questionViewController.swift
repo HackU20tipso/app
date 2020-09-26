@@ -10,6 +10,8 @@ import FirebaseAnalytics
 class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource  {
     
     let me = AppUser()
+    var user_name : String = ""
+    var user_id : String = ""
     //ユーザーのdocumentID
     var docID : String = ""
     //ユーザーの名前/パスワード
@@ -71,7 +73,8 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         guard let targetage = age, !targetage.isEmpty else {return}
         guard let themetag = theme.text, !themetag.isEmpty else {return}
         
-        let DataToSave2 : [String: Any] = ["url" : urlAuther ,"target_age" : targetage, "target_category" : targetcategory, "target_gender" : targetgender ,"theme" : themetag]
+        let DataToSave2 : [String: Any] = ["url" : urlAuther ,"target_age" : targetage, "target_category" : targetcategory, "target_gender" : targetgender ,"theme" : themetag,"username" : user_name,"userid" : user_id]
+        
         
         //ポイント3より大きかったらボタン押せる
        
@@ -128,6 +131,13 @@ class questionViewController: UIViewController,UIPickerViewDelegate,UIPickerView
         print(self.fromAppDelegate.ThisUsername)
         //fromAppDelegate.Thispassword = "うふ"
         print(self.fromAppDelegate.Thispassword)
+        
+        if let x = self.fromAppDelegate.ThisUsername{
+            user_name = self.fromAppDelegate.ThisUsername
+        }
+        if let y = self.fromAppDelegate.Thispassword{
+            user_id = self.fromAppDelegate.Thispassword
+        }
         
         //pickerの設定
         for _ in 0 ... 2{
