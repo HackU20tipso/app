@@ -10,10 +10,9 @@ import UIKit
 
 var TodoKobetsunonakami_sub = [String]()
 
-
-
-class qListTableTableViewController: UITableViewController {
+class qListTableTableViewController: UITableViewController{
     
+    /*
     var path : String = ""
     var Point : Int = 0
     
@@ -31,14 +30,17 @@ class qListTableTableViewController: UITableViewController {
            //変数を作る
            let TodoCell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
            //変数の中身を作る
-           TodoCell.textLabel!.text = TodoKobetsunonakami[indexPath.row]
+        
+        //   TodoCell.textLabel!.text = TodoKobetsunonakami[indexPath.row]
            //戻り値の設定（表示する中身)
            return TodoCell
        }
 
     let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    override func  viewWillAppear(_ animated: Bool) {
+    //override func viewDidLoad()
+    //override func  viewWillAppear(_ animated: Bool)
+    override func viewDidLoad(){
         print("これ動いてる...??????")
         TodoKobetsunonakami_sub[0] = "表示して欲しい"
         //super.viewDidLoad()
@@ -69,7 +71,7 @@ class qListTableTableViewController: UITableViewController {
        override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
        }
-            
+            */
 }
 
 //OutofRangeをチェックできるやつ

@@ -4,8 +4,9 @@ import UIKit
 //var TodoKobetsunonakami = [String]()
 
 //classの継承を追加
-class addlistViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+class addlistViewController: UIViewController {
+    
+/*
     //UITableView、numberOfRowsInSectionの追加(表示するcell数を決める)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //戻り値の設定(表示するcell数)
@@ -26,7 +27,6 @@ class addlistViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return TodoCell
     }
 
-
     //最初からあるコード
     override func viewWillAppear(_ animated: Bool) {
         print("フィルタリング")
@@ -45,6 +45,9 @@ class addlistViewController: UIViewController,UITableViewDelegate,UITableViewDat
     //最初からあるコード
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+ */
+    override func viewWillAppear(_ animated: Bool) {
     }
     
 }
