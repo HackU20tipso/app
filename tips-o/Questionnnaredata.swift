@@ -52,6 +52,30 @@ class QuestionnareData {
             
         }
     }
+    
+    //名前とパスワードから,url,themeの取得
+    func get_url_theme(name: String, password: String, complete: @escaping(String, String) -> ()){
+        
+        let _: Void = db.collection("QuestionnareData").whereField("username", isEqualTo: name).whereField("userid", isEqualTo: password)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    
+                    var url : String = ""
+                    var theme : String = ""
+                    
+                    for document in querySnapshot!.documents {
+                        
+                        url = document.get("url") as! String
+                        theme = document.get("theme") as! String
+                        print("\(document.documentID) => \(document.data())")
+                        
+                    }
+                    complete(url, theme)
+                }
+        }
+    }
 }
 
 

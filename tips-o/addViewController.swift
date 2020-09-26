@@ -9,14 +9,18 @@
 import UIKit
 
 // テーブルビューに表示するデータ
-let qsectionTitle = ["チョウ目"]
-let qsection0 = [("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科")]
+let qsectionTitle = ["投稿済みのアンケート"]
+var qsection0 = [("キタテハ","タテハチョウ科")]
 let qtableData = [qsection0]
 
 class addViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let me = AppUser()
+    let ques = QuestionnareData()
+    
     let fromAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    var addData = [(String, String)]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +30,37 @@ class addViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         //fromAppDelegate.Thispassword = "うふ"
         print(fromAppDelegate.Thispassword)
         
-        if let user_name = fromAppDelegate.ThisUsername{
-            print("どうですかね")
-            print(user_name)
+        
+        var name  = ""
+        var id = ""
+        
+        if let x = fromAppDelegate.ThisUsername{
+            name = x
         }
-        if let user_id = fromAppDelegate.Thispassword{
-            print(user_id)
+        if let y = fromAppDelegate.Thispassword{
+            id = y
         }
+        
+        //ユーザーのアンケートを探す
+        var add_url = "あああああああ"
+        var add_theme = "いいいいいいいい"
+        
+        
+        let _ = ques.get_url_theme(name: name, password: id, complete:{(result_url, result_theme) in
+            print("\(id)\(name)")
+            //print("みずきち\(result_url)と\(result_theme)")
+            //qsection0.append((result_url, result_theme))
+            add_url = result_url
+            add_theme = result_theme
+            print("みずきち\(add_url)と\(add_theme)")
+           // qsection0.append((add_url,add_theme))
+            
+        })
+        print("\(add_url)")
+        print("代入された?")
+        //qsection0.append((add_url,add_theme))
+        //qsection0.append(("追加","された?"))
+        
         
         // テーブルビューを作る
         let myTableView:UITableView!
